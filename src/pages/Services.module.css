@@ -1,0 +1,364 @@
+.services {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Hero Section ── */
+.hero {
+  position: relative;
+  background-color: #eaf7f0;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.heroImageContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.heroGradientMask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #eaf7f0 35%, rgba(234, 247, 240, 0.8) 55%, transparent 100%);
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .heroGradientMask {
+    background: linear-gradient(to right, #eaf7f0 60%, rgba(234, 247, 240, 0.9) 80%, transparent 100%);
+  }
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.heroContainer {
+  position: relative;
+  z-index: 3;
+  padding: 4rem 1.5rem;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .heroContainer {
+    padding: 4rem;
+  }
+}
+
+.heroContent {
+  max-width: 550px;
+}
+
+.preTitle {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.preTitleCenter {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.preTitleLine {
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+  color: var(--text-primary);
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 3.25rem;
+  }
+}
+
+.description {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  max-width: 90%;
+}
+
+.solidBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: 0.95rem;
+  background: var(--accent-primary);
+  color: white;
+  transition: background 0.2s ease;
+}
+
+.solidBtn:hover {
+  background: var(--accent-hover);
+}
+
+/* Floating Mission Card */
+.missionCard {
+  display: none;
+  position: absolute;
+  bottom: 2rem;
+  right: 3rem;
+  z-index: 4;
+  background: var(--accent-primary);
+  color: white;
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  width: 220px;
+  box-shadow: var(--shadow-lg);
+}
+
+@media (min-width: 992px) {
+  .missionCard {
+    display: block;
+  }
+}
+
+.missionIconBox {
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+}
+
+.missionCard h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.missionDivider {
+  width: 30px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.4);
+  margin-bottom: 0.75rem;
+}
+
+.missionCard p {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+/* ── Core Services Section ── */
+.coreSection {
+  padding: 4rem 0;
+  background: white;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.sectionHeader h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-top: 0.5rem;
+}
+
+.coreGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .coreGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .coreGrid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.coreCard {
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.coreCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent-primary);
+}
+
+.coreCardTop {
+  padding: 1.5rem 1.25rem;
+  flex: 1;
+}
+
+.coreIconBox {
+  width: 48px;
+  height: 48px;
+  background: var(--accent-lightest);
+  color: var(--accent-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.coreCardTop h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.coreCardTop p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.coreCardImage {
+  overflow: hidden;
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+}
+
+.coreCardImage img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.coreCard:hover .coreCardImage img {
+  transform: scale(1.05);
+}
+
+/* ── Bottom CTA ── */
+.bottomCta {
+  padding: 0 0 4rem 0;
+}
+
+.ctaBanner {
+  background: #f0fdf4;
+  border: 1px solid var(--accent-lightest);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .ctaBanner {
+    flex-direction: row;
+    padding: 1.5rem 3rem;
+  }
+}
+
+.ctaLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .ctaLeft {
+    flex-direction: row;
+    gap: 3rem;
+  }
+}
+
+.ctaItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.ctaIconBox {
+  width: 44px;
+  height: 44px;
+  background: var(--accent-lightest);
+  color: var(--accent-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ctaItem h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.ctaItem p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.95rem;
+  background: var(--accent-primary);
+  color: white;
+  transition: background 0.2s ease;
+  white-space: nowrap;
+}
+
+.ctaBtn:hover {
+  background: var(--accent-hover);
+}
