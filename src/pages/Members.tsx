@@ -25,17 +25,17 @@ const staggerContainer = {
 };
 
 const members = [
-  { name: "Alok", role: "Member", image: alokImg, joined: "2020" },
+  { name: "Aalok Kumar Tharu" , role: "Member", image: alokImg, joined: "2020" },
   { name: "Amit Das Tharu", role: "Member", image: amitImg, joined: "2020" },
   { name: "Arbind Adhikari", role: "Member", image: arbindImg, joined: "2021" },
-  { name: "Aryan", role: "Member", image: aryanImg, joined: "2021" },
+  { name: "Aryan Kumar Tharu", role: "Member", image: aryanImg, joined: "2021" },
   { name: "Gaurishankar Das Tharu", role: "Member", image: gaurishankarImg, joined: "2021" },
   { name: "Kishor kumar Tharu", role: "Member", image: kishorImg, joined: "2022" },
   { name: "Ramjit Mahato", role: "Member", image: ramjitImg, joined: "2022" },
   { name: "Sailendra Das Tharu", role: "Member", image: sailendraImg, joined: "2022" },
-  { name: "Ramesh", role: "Member", image: rameshImg, joined: "2022" },
-  { name: "Abinash", role: "Member", image: abinashImg, joined: "2022" },
-  { name: "Harindar", role: "Member", image: harindarImg, joined: "2022" },
+  { name: "Ramesh Chaudhary", role: "Member", image: rameshImg, joined: "2022" },
+  { name: "Abinash Kumar", role: "Member", image: abinashImg, joined: "2022" },
+  { name: "Harindar Chaudhary", role: "Member", image: harindarImg, joined: "2022" },
 ];
 
 
