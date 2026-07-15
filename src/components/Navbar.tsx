@@ -54,9 +54,6 @@ export default function Navbar() {
 
         {/* Right: Actions */}
         <div className={styles.actions}>
-          <button className={styles.outlineBtn}>
-            <User size={16} /> Login
-          </button>
           <button className={styles.solidBtn}>
             <UserPlus size={16} /> Become a Member
           </button>

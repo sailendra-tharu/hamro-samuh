@@ -3,10 +3,10 @@ import styles from './Members.module.css';
 
 import alokImg from '../assets/alok.jpg';
 import amitImg from '../assets/amit.jpg';
-import arbindImg from '../assets/arbind.jpeg';
+import arbindImg from '../assets/arbind.png';
 import aryanImg from '../assets/aryan.jpeg';
 import gaurishankarImg from '../assets/gaurishankar.jpg';
-import kishorImg from '../assets/kishor.jpeg';
+import kishorImg from '../assets/kishor.png';
 import ramjitImg from '../assets/ramjit.jpg';
 import sailendraImg from '../assets/sailendra.jpg';
 import rameshImg from '../assets/ramesh.jpeg';

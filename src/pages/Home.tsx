@@ -241,8 +241,8 @@ export default function Home() {
       </section>
 
       {/* Bottom CTA */}
-      <section className={styles.bottomCta}>
-        <div className="container">
+      <section>
+        <div className='flex justify-center items-center'>
           <div className={styles.ctaBanner}>
             <div className={styles.ctaText}>
               <div className={styles.ctaIconBox}><UsersIcon size={32} /></div>
