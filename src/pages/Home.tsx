@@ -69,7 +69,6 @@ export default function Home() {
       <section className={styles.services}>
         <div className="container">
           <div className={styles.sectionHeader}>
-            <span className={styles.preTitle}>OUR SERVICES</span>
             <h2>Everything You Need to Manage Savings</h2>
           </div>
 

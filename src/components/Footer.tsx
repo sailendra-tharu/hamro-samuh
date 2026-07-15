@@ -36,7 +36,7 @@ export default function Footer() {
         <div className={styles.contactCol}>
           <h3>Contact Us</h3>
           <ul>
-            <li><MapPin size={18} /> Kathmandu, Nepal</li>
+            <li><MapPin size={18} /> Shankarsaraiya,Birgunj, Nepal</li>
             <li><Phone size={18} /> +977 123 456 789</li>
             <li><Mail size={18} /> info@hamrosamuh.org</li>
           </ul>

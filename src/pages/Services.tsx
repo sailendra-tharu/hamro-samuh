@@ -139,8 +139,8 @@ export default function Services() {
       </section>
 
       {/* Bottom CTA */}
-      <section className={styles.bottomCta}>
-        <div className="container">
+      <section>
+        <div>
           <div className={styles.ctaBanner}>
             <div className={styles.ctaLeft}>
               <div className={styles.ctaItem}>
