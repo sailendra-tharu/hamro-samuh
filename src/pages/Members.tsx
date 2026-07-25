@@ -39,7 +39,7 @@ const members = [
   { name: "Abinash Kumar", role: "Member", image: abinashImg, joined: "2022" },
   { name: "Harindar Tharu", role: "Member", image: harindarImg, joined: "2023" },
   { name: "Jhalak Gurung", role: "Member", image: jhalakImg, joined: "2023" },
-  { name: "Samir Tharu", role: "Member", image: samirImg, joined: "2023" },
+  { name: "Samir Guru", role: "Member", image: samirImg, joined: "2023" },
 ];
 
 
