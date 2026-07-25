@@ -12,6 +12,8 @@ import sailendraImg from '../assets/sailendra.jpg';
 import rameshImg from '../assets/ramesh.jpeg';
 import abinashImg from '../assets/abinash.jpeg';
 import harindarImg from '../assets/harindar.jpeg';
+import jhalakImg from '../assets/jhalak.jpeg';
+import samirImg from '../assets/samir.jpeg';
 
 
 const fadeIn = {
@@ -35,7 +37,9 @@ const members = [
   { name: "Sailendra Das Tharu", role: "Member", image: sailendraImg, joined: "2022" },
   { name: "Ramesh Chaudhary", role: "Member", image: rameshImg, joined: "2022" },
   { name: "Abinash Kumar", role: "Member", image: abinashImg, joined: "2022" },
-  { name: "Harindar Chaudhary", role: "Member", image: harindarImg, joined: "2022" },
+  { name: "Harindar Tharu", role: "Member", image: harindarImg, joined: "2023" },
+  { name: "Jhalak Gurung", role: "Member", image: jhalakImg, joined: "2023" },
+  { name: "Samir Tharu", role: "Member", image: samirImg, joined: "2023" },
 ];
 
 
