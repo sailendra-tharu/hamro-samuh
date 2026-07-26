@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, User, UserPlus } from 'lucide-react';
+import { Menu, X,UserPlus } from 'lucide-react';
 import styles from './Navbar.module.css';
 
 const navLinks = [
@@ -89,7 +89,6 @@ export default function Navbar() {
               </Link>
             ))}
             <div className={styles.mobileActions}>
-              <button className={styles.outlineBtnMobile}><User size={16} /> Login</button>
               <button className={styles.solidBtnMobile}><UserPlus size={16} /> Login</button>
             </div>
           </motion.div>
