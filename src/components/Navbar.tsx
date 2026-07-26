@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X,UserPlus } from 'lucide-react';
+import { Menu, X, UserPlus } from 'lucide-react';
 import styles from './Navbar.module.css';
 
 const navLinks = [
@@ -72,26 +72,63 @@ export default function Navbar() {
       {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className={styles.mobileMenu}
-          >
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                to={link.path}
-                className={`${styles.mobileLink} ${location.pathname === link.path ? styles.active : ''}`}
-                onClick={() => setIsOpen(false)}
-              >
-                {link.name}
-              </Link>
-            ))}
-            <div className={styles.mobileActions}>
-              <button className={styles.solidBtnMobile}><UserPlus size={16} /> Login</button>
-            </div>
-          </motion.div>
+          <>
+            {/* Overlay */}
+            <motion.div
+              className={styles.overlay}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsOpen(false)}
+            />
+
+            {/* Drawer */}
+            <motion.div
+              className={styles.mobileMenu}
+              initial={{ x: "-100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "-100%" }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+            >
+              {/* Drawer Header */}
+              <div className={styles.mobileHeader}>
+                <div className={styles.mobileLogo}>
+                  <img
+                    src="/logo.png"
+                    alt="Hamro Samuh"
+                    className={styles.logoIconImage}
+                  />
+                  <div className={styles.logoText}>
+                    <span className={styles.logoTitle}>HAMRO SAMUH</span>
+                    <span className={styles.logoSubtitle}>Together We Grow</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Links */}
+              <nav className={styles.mobileNav}>
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.name}
+                    to={link.path}
+                    className={`${styles.mobileLink} ${location.pathname === link.path ? styles.active : ""
+                      }`}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+              </nav>
+
+              {/* Login */}
+              <div className={styles.mobileActions}>
+                <button className={styles.solidBtnMobile}>
+                  <UserPlus size={18} />
+                  Login
+                </button>
+              </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </header>

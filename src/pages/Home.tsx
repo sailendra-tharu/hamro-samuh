@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { UserPlus, User, Banknote, FileText as Document, Users as UsersIcon, BarChart3, ShieldCheck as Shield, Smartphone as Phone, CheckCircle2, Calendar, Star, Bell } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import styles from './Home.module.css';
+import { useNavigate } from "react-router-dom";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -17,6 +18,7 @@ const staggerContainer = {
 };
 
 export default function Home() {
+  const navigate = useNavigate();
   return (
     <div className={styles.home}>
       {/* Hero Section */}
@@ -54,7 +56,7 @@ export default function Home() {
               regularly, achieve financial goals, and support one another.
             </motion.p>
             <motion.div variants={fadeIn} className={styles.actions}>
-              <button className={styles.solidBtn}>
+              <button className={styles.solidBtn} onClick={() => navigate("/contact")}>
                 <UserPlus size={18} /> Become a Member
               </button>
               <button className={styles.outlineBtn}>
@@ -250,7 +252,7 @@ export default function Home() {
                 <p>Join Hamro Samuh today and take the first step towards a secure financial future.</p>
               </div>
             </div>
-            <button className={styles.solidBtn}>
+            <button className={styles.solidBtn} onClick={() => navigate("/contact")}>
               <UserPlus size={18} /> Become a Member Today
             </button>
           </div>

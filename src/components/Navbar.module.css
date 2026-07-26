@@ -144,15 +144,27 @@
   }
 }
 
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 9998;
+}
+
 .mobileMenu {
-  background: var(--bg-surface);
-  overflow: hidden;
-  box-shadow: var(--shadow-lg);
-  border-bottom: 1px solid var(--border-color);
-  position: absolute;
-  top: 100%;
+  position: fixed;
+  top: 0;
   left: 0;
-  width: 100%;
+  width: 80%; /* Change to 100% if you want full screen */
+  height: 100vh;
+
+  background: var(--bg-surface);
+  z-index: 9999;
+
+  display: flex;
+  flex-direction: column;
+
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.2);
 }
 
 .mobileLink {
@@ -171,10 +183,29 @@
 .mobileActions {
   padding: 1.5rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 1rem;
 }
 
 .outlineBtnMobile, .solidBtnMobile {
   width: 100%;
+}
+
+.mobileHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.mobileLogo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mobileLogo .logoText {
+  display: flex;
+  flex-direction: column;
 }
