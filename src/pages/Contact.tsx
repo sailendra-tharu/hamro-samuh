@@ -5,6 +5,9 @@ import { Send } from "lucide-react";
 import styles from "./Contact.module.css";
 
 export default function Contact() {
+console.log("Service:", import.meta.env.VITE_EMAILJS_SERVICE_ID);
+console.log("Template:", import.meta.env.VITE_EMAILJS_TEMPLATE_ID);
+console.log("Public:", import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
   const form = useRef<HTMLFormElement>(null);
 
   const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
