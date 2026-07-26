@@ -48,7 +48,7 @@ export default function Members() {
     <div className={styles.members}>
       <section className={styles.membersSection}>
         <div className="container">
-          <div className={styles.sectionHeader}>
+          <div className={styles.header}>
             <h1 className={styles.title}>Our Members</h1>
           </div>
           <motion.div
