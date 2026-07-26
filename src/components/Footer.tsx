@@ -37,8 +37,8 @@ export default function Footer() {
           <h3>Contact Us</h3>
           <ul>
             <li><MapPin size={18} /> Shankarsaraiya,Birgunj, Nepal</li>
-            <li><Phone size={18} /> +977 123 456 789</li>
-            <li><Mail size={18} /> info@hamrosamuh.org</li>
+            <li><Phone size={18} /> +977 9823092963</li>
+            <li><Mail size={18} /> hamrosamuh@yopmail.com</li>
           </ul>
         </div>
       </div>
