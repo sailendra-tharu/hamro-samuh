@@ -14,7 +14,7 @@ import abinashImg from '../assets/abinash.jpeg';
 import harindarImg from '../assets/harindar.jpeg';
 import jhalakImg from '../assets/jhalak.jpeg';
 import samirImg from '../assets/samir.jpeg';
-
+import sanjayImg from '../assets/sanjay.png';
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -27,7 +27,7 @@ const staggerContainer = {
 };
 
 const members = [
-  { name: "Aalok Kumar Tharu" , role: "Member", image: alokImg, joined: "2020" },
+  { name: "Aalok Kumar Tharu", role: "Member", image: alokImg, joined: "2020" },
   { name: "Amit Das Tharu", role: "Member", image: amitImg, joined: "2020" },
   { name: "Arbind Adhikari", role: "Member", image: arbindImg, joined: "2021" },
   { name: "Aryan Kumar Tharu", role: "Member", image: aryanImg, joined: "2021" },
@@ -40,31 +40,16 @@ const members = [
   { name: "Harindar Tharu", role: "Member", image: harindarImg, joined: "2023" },
   { name: "Jhalak Gurung", role: "Member", image: jhalakImg, joined: "2023" },
   { name: "Samir Guro", role: "Member", image: samirImg, joined: "2023" },
+  { name: "Sanjay Chaudhary", role: "Member", image: sanjayImg, joined: "2023" },
 ];
-
 
 export default function Members() {
   return (
     <div className={styles.members}>
-
-
-      {/* Members Grid */}
       <section className={styles.membersSection}>
         <div className="container">
           <div className={styles.sectionHeader}>
-            <h1
-              style={{
-                textAlign: "center",
-                color: "green",
-                fontSize: "3rem",
-                textDecorationColor: "green",
-                textUnderlineOffset: "8px",
-                fontWeight: "700",
-                marginBottom: "2rem",
-              }}
-            >
-              Our Members
-            </h1>
+            <h1 className={styles.title}>Our Members</h1>
           </div>
           <motion.div
             className={styles.grid}
@@ -81,7 +66,12 @@ export default function Members() {
                 whileHover={{ y: -6 }}
               >
                 <div className={styles.cardImageWrap}>
-                  <img src={member.image} alt={member.name} className={styles.image} />
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className={styles.image}
+                    loading="lazy"
+                  />
                   <div className={styles.cardImageOverlay}></div>
                 </div>
                 <div className={styles.cardBody}>
@@ -94,7 +84,6 @@ export default function Members() {
           </motion.div>
         </div>
       </section>
-
     </div>
   );
 }

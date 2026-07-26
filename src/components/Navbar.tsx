@@ -55,7 +55,7 @@ export default function Navbar() {
         {/* Right: Actions */}
         <div className={styles.actions}>
           <button className={styles.solidBtn}>
-            <UserPlus size={16} /> Become a Member
+            <UserPlus size={16} /> Login
           </button>
         </div>
 
@@ -90,7 +90,7 @@ export default function Navbar() {
             ))}
             <div className={styles.mobileActions}>
               <button className={styles.outlineBtnMobile}><User size={16} /> Login</button>
-              <button className={styles.solidBtnMobile}><UserPlus size={16} /> Become a Member</button>
+              <button className={styles.solidBtnMobile}><UserPlus size={16} /> Login</button>
             </div>
           </motion.div>
         )}
