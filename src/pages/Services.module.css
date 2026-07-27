@@ -7,7 +7,7 @@
 .hero {
   position: relative;
   background-color: #eaf7f0;
-  min-height: 480px;
+  min-height: clamp(460px, 58vw, 520px);
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -34,7 +34,11 @@
 
 @media (max-width: 768px) {
   .heroGradientMask {
-    background: linear-gradient(to right, #eaf7f0 60%, rgba(234, 247, 240, 0.9) 80%, transparent 100%);
+    background: linear-gradient(to right, #eaf7f0 45%, rgba(234, 247, 240, 0.92) 78%, rgba(234, 247, 240, 0.65) 100%);
+  }
+
+  .heroImage {
+    opacity: 0.8;
   }
 }
 
@@ -48,7 +52,7 @@
 .heroContainer {
   position: relative;
   z-index: 3;
-  padding: 4rem 1.5rem;
+  padding-block: clamp(3rem, 8vw, 4rem);
   width: 100%;
 }
 
@@ -59,7 +63,7 @@
 }
 
 .heroContent {
-  max-width: 550px;
+  width: min(100%, 550px);
 }
 
 .preTitle {
@@ -92,17 +96,11 @@
 }
 
 .title {
-  font-size: 2.5rem;
+  font-size: clamp(2.15rem, 7vw, 3.25rem);
   font-weight: 800;
   line-height: 1.15;
   margin-bottom: 1.25rem;
   color: var(--text-primary);
-}
-
-@media (min-width: 768px) {
-  .title {
-    font-size: 3.25rem;
-  }
 }
 
 .description {
@@ -110,7 +108,7 @@
   color: var(--text-secondary);
   line-height: 1.7;
   margin-bottom: 2rem;
-  max-width: 90%;
+  max-width: 100%;
 }
 
 .solidBtn {
@@ -135,7 +133,7 @@
   display: none;
   position: absolute;
   bottom: 2rem;
-  right: 3rem;
+  right: clamp(1rem, 4vw, 3rem);
   z-index: 4;
   background: var(--accent-primary);
   color: white;
@@ -183,17 +181,17 @@
 
 /* ── Core Services Section ── */
 .coreSection {
-  padding: 4rem 0;
+  padding: clamp(3rem, 7vw, 4rem) 0;
   background: white;
 }
 
 .sectionHeader {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: clamp(2rem, 5vw, 3rem);
 }
 
 .sectionHeader h2 {
-  font-size: 2rem;
+  font-size: clamp(1.65rem, 4vw, 2rem);
   font-weight: 800;
   color: var(--text-primary);
   margin-top: 0.5rem;
@@ -213,7 +211,13 @@
 
 @media (min-width: 992px) {
   .coreGrid {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1200px) {
+  .coreGrid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 }
 
@@ -225,6 +229,7 @@
   display: flex;
   flex-direction: column;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  min-width: 0;
 }
 
 .coreCard:hover {
@@ -236,6 +241,7 @@
 .coreCardTop {
   padding: 1.5rem 1.25rem;
   flex: 1;
+  min-width: 0;
 }
 
 .coreIconBox {
@@ -288,7 +294,7 @@
   background: #f0fdf4;
   border: 1px solid var(--accent-lightest);
   border-radius: var(--radius-xl);
-  padding: 1.5rem 2rem;
+  padding: clamp(1.25rem, 5vw, 1.5rem) clamp(1.25rem, 5vw, 3rem);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -307,6 +313,7 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  min-width: 0;
 }
 
 @media (min-width: 640px) {
@@ -320,6 +327,7 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  min-width: 0;
 }
 
 .ctaIconBox {
@@ -361,4 +369,16 @@
 
 .ctaBtn:hover {
   background: var(--accent-hover);
+}
+
+@media (max-width: 767px) {
+  .ctaBanner {
+    align-items: stretch;
+  }
+
+  .ctaBtn {
+    justify-content: center;
+    white-space: normal;
+    text-align: center;
+  }
 }

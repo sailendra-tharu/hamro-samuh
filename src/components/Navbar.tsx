@@ -64,6 +64,8 @@ export default function Navbar() {
           className={styles.mobileToggle}
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle Menu"
+          aria-expanded={isOpen}
+          aria-controls="mobile-navigation"
         >
           {isOpen ? <X /> : <Menu />}
         </button>
@@ -84,6 +86,7 @@ export default function Navbar() {
 
             {/* Drawer */}
             <motion.div
+              id="mobile-navigation"
               className={styles.mobileMenu}
               initial={{ x: "-100%" }}
               animate={{ x: 0 }}

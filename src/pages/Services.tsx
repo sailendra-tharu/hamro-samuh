@@ -76,7 +76,7 @@ export default function Services() {
             <motion.span variants={fadeIn} className={styles.preTitle}>
             </motion.span>
             <motion.h1 variants={fadeIn} className={styles.title}>
-              Working Together <br /> for a Better Tomorrow
+              Working Together for a Better Tomorrow
             </motion.h1>
             <motion.p variants={fadeIn} className={styles.description}>
               At Hamro Samuh, we provide services that empower communities, promote growth, and create sustainable impact.

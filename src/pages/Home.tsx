@@ -45,15 +45,14 @@ export default function Home() {
             variants={staggerContainer}
           >
             <motion.h1 variants={fadeIn} className={styles.title}>
-              Welcome to <br />
-              <span className={styles.titleHighlight}>Hamro Samuh</span>
+              Welcome to <span className={styles.titleHighlight}>Hamro Samuh</span>
             </motion.h1>
             <motion.h2 variants={fadeIn} className={styles.subtitle}>
-              Building a Stronger Future Together <br /> Through Savings
+              Building a Stronger Future Together Through Savings
             </motion.h2>
             <motion.p variants={fadeIn} className={styles.description}>
-              Join our community savings organization where members save <br />
-              regularly, achieve financial goals, and support one another.
+              Join our community savings organization where members save regularly,
+              achieve financial goals, and support one another.
             </motion.p>
             <motion.div variants={fadeIn} className={styles.actions}>
               <button className={styles.solidBtn} onClick={() => navigate("/contact")}>
@@ -243,7 +242,7 @@ export default function Home() {
 
       {/* Bottom CTA */}
       <section>
-        <div className='flex justify-center items-center'>
+        <div className="container">
           <div className={styles.ctaBanner}>
             <div className={styles.ctaText}>
               <div className={styles.ctaIconBox}><UsersIcon size={32} /></div>

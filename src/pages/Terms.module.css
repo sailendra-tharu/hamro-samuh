@@ -1,5 +1,5 @@
 .terms {
-  padding: 4rem 0;
+  padding: clamp(3rem, 7vw, 4rem) 0;
   min-height: 80vh;
   background: #f8fafc;
 }
@@ -12,7 +12,7 @@
 }
 
 .header h1 {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 7vw, 2.5rem);
   font-weight: 800;
   color: var(--text-primary);
   margin-bottom: 0.75rem;
@@ -42,7 +42,8 @@
   border: 1px solid var(--border-color);
   border-left: 4px solid var(--accent-primary);
   border-radius: var(--radius-lg);
-  padding: 2rem;
+  padding: clamp(1.25rem, 5vw, 2rem);
+  min-width: 0;
 }
 
 .section h2 {
@@ -85,8 +86,7 @@
   line-height: 1.7;
   padding-left: 1rem;
   position: relative;
-  word-break: keep-all;
-  overflow-wrap: break-word;
+  overflow-wrap: anywhere;
 }
 
 .bulletList li::before {
