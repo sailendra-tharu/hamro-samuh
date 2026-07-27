@@ -1,14 +1,22 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
-import { Send } from "lucide-react";
+import { CheckCircle2, Send, XCircle } from "lucide-react";
 import styles from "./Contact.module.css";
 
 export default function Contact() {
-console.log("Service:", import.meta.env.VITE_EMAILJS_SERVICE_ID);
-console.log("Template:", import.meta.env.VITE_EMAILJS_TEMPLATE_ID);
-console.log("Public:", import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
   const form = useRef<HTMLFormElement>(null);
+  const [toast, setToast] = useState<{
+    type: "success" | "error";
+    message: string;
+  } | null>(null);
+
+  useEffect(() => {
+    if (!toast) return;
+
+    const timeout = window.setTimeout(() => setToast(null), 4000);
+    return () => window.clearTimeout(timeout);
+  }, [toast]);
 
   const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -23,16 +31,29 @@ console.log("Public:", import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
 
-      alert("Message sent successfully!");
+      setToast({ type: "success", message: "Message sent successfully!" });
       form.current.reset();
     } catch (error) {
       console.error(error);
-      alert("Failed to send message.");
+      setToast({ type: "error", message: "Failed to send message." });
     }
   };
 
   return (
     <div className={styles.contact}>
+      {toast && (
+        <motion.div
+          role="alert"
+          aria-live="polite"
+          className={`${styles.toast} ${toast.type === "success" ? styles.toastSuccess : styles.toastError}`}
+          initial={{ opacity: 0, x: 48 }}
+          animate={{ opacity: 1, x: 0 }}
+        >
+          {toast.type === "success" ? <CheckCircle2 size={20} /> : <XCircle size={20} />}
+          <span>{toast.message}</span>
+        </motion.div>
+      )}
+
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
