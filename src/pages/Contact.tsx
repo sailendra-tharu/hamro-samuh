@@ -4,6 +4,12 @@ import { motion } from "framer-motion";
 import { CheckCircle2, Send, XCircle } from "lucide-react";
 import styles from "./Contact.module.css";
 
+const emailJsConfig = {
+  serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID,
+  templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+  publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+};
+
 export default function Contact() {
   const form = useRef<HTMLFormElement>(null);
   const [toast, setToast] = useState<{
@@ -23,12 +29,21 @@ export default function Contact() {
 
     if (!form.current) return;
 
+    if (!emailJsConfig.serviceId || !emailJsConfig.templateId || !emailJsConfig.publicKey) {
+      console.error("EmailJS configuration is missing.");
+      setToast({
+        type: "error",
+        message: "Message service is not configured. Please try again later.",
+      });
+      return;
+    }
+
     try {
       await emailjs.sendForm(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        emailJsConfig.serviceId,
+        emailJsConfig.templateId,
         form.current,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        emailJsConfig.publicKey
       );
 
       setToast({ type: "success", message: "Message sent successfully!" });
