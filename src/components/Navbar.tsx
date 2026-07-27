@@ -55,7 +55,7 @@ export default function Navbar() {
         {/* Right: Actions */}
         <div className={styles.actions}>
           <button className={styles.solidBtn}>
-            <UserPlus size={16} /> Login
+            <UserPlus size={20} /> Login
           </button>
         </div>
 
@@ -126,7 +126,7 @@ export default function Navbar() {
               {/* Login */}
               <div className={styles.mobileActions}>
                 <button className={styles.solidBtnMobile}>
-                  <UserPlus size={18} />
+                  <UserPlus size={20} />
                   Login
                 </button>
               </div>

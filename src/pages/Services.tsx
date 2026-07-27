@@ -79,8 +79,7 @@ export default function Services() {
               Working Together for a Better Tomorrow
             </motion.h1>
             <motion.p variants={fadeIn} className={styles.description}>
-              At Hamro Samuh, we provide services that empower communities, promote growth, and create sustainable impact.
-            </motion.p>
+              At Hamro Samuh, we believe that financial growth begins with trust and cooperation. By encouraging regular savings, providing responsible lending, and maintaining transparent financial management, we empower our members to achieve their goals while building a stronger, more resilient community together.            </motion.p>
             <motion.div variants={fadeIn}>
               <a href="#core-services" className={styles.solidBtn}>
                 Explore Our Services <ArrowRight size={18} />

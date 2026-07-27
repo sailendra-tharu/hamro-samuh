@@ -51,8 +51,7 @@ export default function Home() {
               Building a Stronger Future Together Through Savings
             </motion.h2>
             <motion.p variants={fadeIn} className={styles.description}>
-              Join our community savings organization where members save regularly,
-              achieve financial goals, and support one another.
+              Welcome to Hamro Samuh, a trusted community savings organization where members come together to save regularly, access responsible financial support, and achieve their personal and collective financial goals. Through transparency, cooperation, and mutual trust, we are building stronger families, stronger communities, and a more prosperous future for everyone.
             </motion.p>
             <motion.div variants={fadeIn} className={styles.actions}>
               <button className={styles.solidBtn} onClick={() => navigate("/contact")}>

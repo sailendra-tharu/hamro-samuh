@@ -15,6 +15,7 @@ import harindarImg from '../assets/harindar.jpeg';
 import jhalakImg from '../assets/jhalak.jpeg';
 import samirImg from '../assets/samir.jpeg';
 import sanjayImg from '../assets/sanjay.png';
+import shreekantiImg from '../assets/shreekanti.jpeg';
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -41,6 +42,8 @@ const members = [
   { name: "Jhalak Gurung", role: "Member", image: jhalakImg, joined: "2023" },
   { name: "Samir Guro", role: "Member", image: samirImg, joined: "2023" },
   { name: "Sanjay Chaudhary", role: "Member", image: sanjayImg, joined: "2023" },
+  { name: "Shreekanti Devi", role: "Member", image: shreekantiImg, joined: "2023" }
+
 ];
 
 export default function Members() {

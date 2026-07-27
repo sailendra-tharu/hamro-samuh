@@ -139,6 +139,14 @@
 .solidBtn, .solidBtnMobile {
   background: var(--accent-primary);
   color: white;
+  padding: 0.7rem 1.35rem;
+  font-size: 0.9rem;
+}
+
+.solidBtn svg,
+.solidBtnMobile svg {
+  width: 18px;
+  height: 18px;
 }
 
 .solidBtn:hover, .solidBtnMobile:hover {
