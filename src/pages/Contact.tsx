@@ -10,6 +10,10 @@ const emailJsConfig = {
   publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
 };
 
+console.log("SERVICE:", emailJsConfig.serviceId);
+console.log("TEMPLATE:", emailJsConfig.templateId);
+console.log("PUBLIC:", emailJsConfig.publicKey);
+
 export default function Contact() {
   const form = useRef<HTMLFormElement>(null);
   const [toast, setToast] = useState<{
@@ -24,35 +28,66 @@ export default function Contact() {
     return () => window.clearTimeout(timeout);
   }, [toast]);
 
-  const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+ const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
 
-    if (!form.current) return;
+  if (!form.current) return;
 
-    if (!emailJsConfig.serviceId || !emailJsConfig.templateId || !emailJsConfig.publicKey) {
-      console.error("EmailJS configuration is missing.");
-      setToast({
-        type: "error",
-        message: "Message service is not configured. Please try again later.",
-      });
-      return;
+  console.log("SERVICE:", emailJsConfig.serviceId);
+  console.log("TEMPLATE:", emailJsConfig.templateId);
+  console.log("PUBLIC:", emailJsConfig.publicKey);
+
+  if (
+    !emailJsConfig.serviceId ||
+    !emailJsConfig.templateId ||
+    !emailJsConfig.publicKey
+  ) {
+    console.error("EmailJS configuration is missing.");
+
+    setToast({
+      type: "error",
+      message: "Message service is not configured. Please try again later.",
+    });
+
+    return;
+  }
+
+  try {
+    const response = await emailjs.sendForm(
+      emailJsConfig.serviceId,
+      emailJsConfig.templateId,
+      form.current,
+      emailJsConfig.publicKey
+    );
+
+    console.log("Email sent successfully:", response);
+
+    setToast({
+      type: "success",
+      message: "Message sent successfully!",
+    });
+
+    form.current.reset();
+  } catch (error: any) {
+    console.error("========== EMAILJS ERROR ==========");
+    console.error(error);
+
+    if (error?.status) {
+      console.error("Status:", error.status);
     }
 
-    try {
-      await emailjs.sendForm(
-        emailJsConfig.serviceId,
-        emailJsConfig.templateId,
-        form.current,
-        emailJsConfig.publicKey
-      );
-
-      setToast({ type: "success", message: "Message sent successfully!" });
-      form.current.reset();
-    } catch (error) {
-      console.error(error);
-      setToast({ type: "error", message: "Failed to send message." });
+    if (error?.text) {
+      console.error("Text:", error.text);
     }
-  };
+
+    console.error("==================================");
+
+    setToast({
+      type: "error",
+      message: error?.text || "Failed to send message.",
+    });
+  }
+};
 
   return (
     <div className={styles.contact}>
