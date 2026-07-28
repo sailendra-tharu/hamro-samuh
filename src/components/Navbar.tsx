@@ -37,11 +37,12 @@ export default function Navbar() {
         </Link>
 
         {/* Center: Desktop Nav */}
-        <nav className={styles.desktopNav}>
+        <nav className={styles.desktopNav} aria-label="Primary navigation">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               to={link.path}
+              aria-current={location.pathname === link.path ? 'page' : undefined}
               className={`${styles.navLink} ${location.pathname === link.path ? styles.active : ''}`}
             >
               {link.name}
@@ -54,7 +55,7 @@ export default function Navbar() {
 
         {/* Right: Actions */}
         <div className={styles.actions}>
-          <button className={styles.solidBtn}>
+          <button type="button" className={styles.solidBtn}>
             <UserPlus size={20} /> Login
           </button>
         </div>
@@ -85,8 +86,9 @@ export default function Navbar() {
             />
 
             {/* Drawer */}
-            <motion.div
+            <motion.aside
               id="mobile-navigation"
+              aria-label="Mobile navigation menu"
               className={styles.mobileMenu}
               initial={{ x: "-100%" }}
               animate={{ x: 0 }}
@@ -109,11 +111,12 @@ export default function Navbar() {
               </div>
 
               {/* Links */}
-              <nav className={styles.mobileNav}>
+              <nav className={styles.mobileNav} aria-label="Mobile navigation">
                 {navLinks.map((link) => (
                   <Link
                     key={link.name}
                     to={link.path}
+                    aria-current={location.pathname === link.path ? 'page' : undefined}
                     className={`${styles.mobileLink} ${location.pathname === link.path ? styles.active : ""
                       }`}
                     onClick={() => setIsOpen(false)}
@@ -125,12 +128,12 @@ export default function Navbar() {
 
               {/* Login */}
               <div className={styles.mobileActions}>
-                <button className={styles.solidBtnMobile}>
+                <button type="button" className={styles.solidBtnMobile}>
                   <UserPlus size={20} />
                   Login
                 </button>
               </div>
-            </motion.div>
+            </motion.aside>
           </>
         )}
       </AnimatePresence>

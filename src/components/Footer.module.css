@@ -117,6 +117,14 @@
   color: var(--accent-primary);
 }
 
+.contactCol address {
+  font-style: normal;
+}
+
+.contactCol a:hover {
+  color: var(--accent-primary);
+}
+
 .contactCol li {
   display: flex;
   align-items: flex-start;

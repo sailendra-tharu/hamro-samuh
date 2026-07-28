@@ -134,6 +134,9 @@
 
 .valuesGrid {
   display: grid;
+  list-style: none;
+  padding: 0;
+  margin: 0;
   grid-template-columns: 1fr;
   gap: 1.5rem;
 }
@@ -232,6 +235,7 @@
 
 .impactStats {
   display: grid;
+  margin: 0;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
   flex: 1;
@@ -262,15 +266,22 @@
   flex-shrink: 0;
 }
 
-.impactStatItem h4 {
+.impactStatItem > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.impactStatItem dd {
   font-size: 1.25rem;
   font-weight: 800;
   line-height: 1.2;
+  order: 1;
 }
 
-.impactStatItem span {
+.impactStatItem dt {
   font-size: 0.8rem;
   opacity: 0.85;
+  order: 2;
 }
 
 /* ── Quote Section ── */

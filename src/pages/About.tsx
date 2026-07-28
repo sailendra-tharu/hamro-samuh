@@ -15,10 +15,10 @@ const staggerContainer = {
 
 export default function About() {
   return (
-    <div className={styles.about}>
+    <article className={styles.about}>
 
       {/* Hero Section */}
-      <section className={styles.hero}>
+      <section className={styles.hero} aria-labelledby="about-title">
         <motion.div
           className={styles.heroImageContainer}
           initial={{ opacity: 0 }}
@@ -40,7 +40,7 @@ export default function About() {
             animate="visible"
             variants={staggerContainer}
           >
-            <motion.h1 variants={fadeIn} className={styles.title}>
+            <motion.h1 id="about-title" variants={fadeIn} className={styles.title}>
               <span className={styles.titleHighlight}>Hamro Samuh</span>
             </motion.h1>
             <motion.div variants={fadeIn} className={styles.titleBar}></motion.div>
@@ -60,11 +60,11 @@ export default function About() {
       </section>
 
       {/* Mission & Values */}
-      <section className={styles.valuesSection}>
+      <section className={styles.valuesSection} aria-labelledby="values-title">
         <div className="container">
-          <h2 className={styles.sectionTitle}>Our Mission & Values</h2>
+          <h2 id="values-title" className={styles.sectionTitle}>Our Mission & Values</h2>
 
-          <motion.div
+          <motion.ul
             className={styles.valuesGrid}
             initial="hidden"
             whileInView="visible"
@@ -77,18 +77,20 @@ export default function About() {
               { icon: <TrendingUp />, title: "Financial Empowerment", desc: "We encourage regular saving and smart financial habits for a better tomorrow." },
               { icon: <Target />, title: "Our Goal", desc: "To create a self-reliant community where everyone can grow and prosper." }
             ].map((item, i) => (
-              <motion.div key={i} className={styles.valueCard} variants={fadeIn}>
-                <div className={styles.valueIconBox}>{item.icon}</div>
-                <h3>{item.title}</h3>
-                <p>{item.desc}</p>
-              </motion.div>
+              <li key={i}>
+                <motion.article className={styles.valueCard} variants={fadeIn}>
+                  <div className={styles.valueIconBox} aria-hidden="true">{item.icon}</div>
+                  <h3>{item.title}</h3>
+                  <p>{item.desc}</p>
+                </motion.article>
+              </li>
             ))}
-          </motion.div>
+          </motion.ul>
         </div>
       </section>
 
       {/* Impact Banner */}
-      <section className={styles.impactSection}>
+      <section className={styles.impactSection} aria-labelledby="impact-title">
         <div className="container">
           <motion.div
             className={styles.impactBanner}
@@ -98,47 +100,47 @@ export default function About() {
             transition={{ duration: 0.6 }}
           >
             <div className={styles.impactText}>
-              <h2>Together, we create real impact</h2>
+              <h2 id="impact-title">Together, we create real impact</h2>
               <p>Small savings today, stronger community tomorrow.</p>
             </div>
-            <div className={styles.impactStats}>
+            <dl className={styles.impactStats}>
               <div className={styles.impactStatItem}>
                 <div className={styles.impactStatIcon}><Users size={22} /></div>
                 <div>
-                  <h4>250+</h4>
-                  <span>Active Members</span>
+                  <dd>250+</dd>
+                  <dt>Active Members</dt>
                 </div>
               </div>
               <div className={styles.impactStatItem}>
                 <div className={styles.impactStatIcon}><TrendingUp size={22} /></div>
                 <div>
-                  <h4>Rs. 2.5M+</h4>
-                  <span>Total Savings</span>
+                  <dd>Rs. 2.5M+</dd>
+                  <dt>Total Savings</dt>
                 </div>
               </div>
               <div className={styles.impactStatItem}>
                 <div className={styles.impactStatIcon}><Globe size={22} /></div>
                 <div>
-                  <h4>40+</h4>
-                  <span>Groups</span>
+                  <dd>40+</dd>
+                  <dt>Groups</dt>
                 </div>
               </div>
               <div className={styles.impactStatItem}>
                 <div className={styles.impactStatIcon}><Handshake size={22} /></div>
                 <div>
-                  <h4>100%</h4>
-                  <span>Trust & Commitment</span>
+                  <dd>100%</dd>
+                  <dt>Trust & Commitment</dt>
                 </div>
               </div>
-            </div>
+            </dl>
           </motion.div>
         </div>
       </section>
 
       {/* Quote Section */}
-      <section className={styles.quoteSection}>
+      <section className={styles.quoteSection} aria-label="Hamro Samuh quote">
         <div className="container">
-          <motion.div
+          <motion.blockquote
             className={styles.quoteBox}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -150,11 +152,11 @@ export default function About() {
               <em>Alone we can do so little; together we can do so much.</em>
             </p>
             <span className={styles.quoteMarkRight}>&rdquo;</span>
-            <p className={styles.quoteAuthor}>– Helen Keller</p>
-          </motion.div>
+            <cite className={styles.quoteAuthor}>– Helen Keller</cite>
+          </motion.blockquote>
         </div>
       </section>
 
-    </div>
+    </article>
   );
 }

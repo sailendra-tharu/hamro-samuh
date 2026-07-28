@@ -199,6 +199,9 @@
 
 .coreGrid {
   display: grid;
+  list-style: none;
+  padding: 0;
+  margin: 0;
   grid-template-columns: 1fr;
   gap: 1.5rem;
 }

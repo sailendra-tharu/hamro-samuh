@@ -90,7 +90,7 @@ export default function Contact() {
 };
 
   return (
-    <div className={styles.contact}>
+    <article className={styles.contact}>
       {toast && (
         <motion.div
           role="alert"
@@ -105,12 +105,12 @@ export default function Contact() {
       )}
 
       <div className="container">
-        <motion.div
+        <motion.header
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className={styles.header}
         >
-          <h1>
+          <h1 id="contact-title">
             Get in <span className="text-gradient">Touch</span>
           </h1>
 
@@ -118,14 +118,16 @@ export default function Contact() {
             We'd love to hear from you. Send us a message and we'll respond as
             soon as possible.
           </p>
-        </motion.div>
+        </motion.header>
 
-        <motion.div
+        <motion.section
+          aria-labelledby="contact-form-title"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.2 }}
           className={styles.formContainer}
         >
+          <h2 id="contact-form-title" className="sr-only">Send us a message</h2>
           <form
             ref={form}
             onSubmit={sendEmail}
@@ -177,8 +179,8 @@ export default function Contact() {
               Send Message
             </motion.button>
           </form>
-        </motion.div>
+        </motion.section>
       </div>
-    </div>
+    </article>
   );
 }

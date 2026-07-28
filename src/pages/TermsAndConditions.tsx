@@ -3,16 +3,16 @@ import styles from './Terms.module.css';
 
 export default function TermsAndConditions() {
   return (
-    <div className={styles.terms}>
+    <article className={styles.terms}>
       <div className="container">
-        <motion.div
+        <motion.header
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className={styles.header}
         >
           <h1>नियम तथा <span className={styles.highlight}>सर्तहरू</span></h1>
           <p className={styles.subtitle}>हाम्रो समूहमा सहभागी हुनु अघि यी नियमहरू ध्यानपूर्वक पढ्नुहोस्।</p>
-        </motion.div>
+        </motion.header>
 
         <motion.div
           initial={{ opacity: 0 }}
@@ -159,13 +159,13 @@ export default function TermsAndConditions() {
           </section>
 
           {/* Footer Note */}
-          <div className={styles.footerNote}>
+          <footer className={styles.footerNote}>
             <p>२०८२/०९/२०</p>
             <p><strong>धन्यवाद</strong></p>
-          </div>
+          </footer>
 
         </motion.div>
       </div>
-    </div>
+    </article>
   );
 }

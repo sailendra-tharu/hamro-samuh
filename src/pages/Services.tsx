@@ -48,10 +48,10 @@ const services = [
 
 export default function Services() {
   return (
-    <div className={styles.services}>
+    <article className={styles.services}>
 
       {/* Hero Section */}
-      <section className={styles.hero}>
+      <section className={styles.hero} aria-labelledby="services-title">
         <motion.div
           className={styles.heroImageContainer}
           initial={{ opacity: 0 }}
@@ -73,9 +73,7 @@ export default function Services() {
             animate="visible"
             variants={staggerContainer}
           >
-            <motion.span variants={fadeIn} className={styles.preTitle}>
-            </motion.span>
-            <motion.h1 variants={fadeIn} className={styles.title}>
+            <motion.h1 id="services-title" variants={fadeIn} className={styles.title}>
               Working Together for a Better Tomorrow
             </motion.h1>
             <motion.p variants={fadeIn} className={styles.description}>
@@ -89,7 +87,8 @@ export default function Services() {
         </div>
 
         {/* Floating Mission Card */}
-        <motion.div
+        <motion.aside
+          aria-labelledby="mission-title"
           className={styles.missionCard}
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
@@ -98,23 +97,23 @@ export default function Services() {
           <div className={styles.missionIconBox}>
             <Users size={28} />
           </div>
-          <h3>Our Mission</h3>
+          <h3 id="mission-title">Our Mission</h3>
           <div className={styles.missionDivider}></div>
           <p>Empowering people and communities through collaboration, support, and sustainable solutions.</p>
-        </motion.div>
+        </motion.aside>
       </section>
 
       {/* Core Services */}
-      <section id="core-services" className={styles.coreSection}>
+      <section id="core-services" className={styles.coreSection} aria-labelledby="core-services-title">
         <div className="container">
           <div className={styles.sectionHeader}>
             <span className={styles.preTitleCenter}>
               WHAT WE DO <span className={styles.preTitleLine}>—</span>
             </span>
-            <h2>Our Core Services</h2>
+            <h2 id="core-services-title">Our Core Services</h2>
           </div>
 
-          <motion.div
+          <motion.ul
             className={styles.coreGrid}
             initial="hidden"
             whileInView="visible"
@@ -122,23 +121,25 @@ export default function Services() {
             variants={staggerContainer}
           >
             {services.map((srv, i) => (
-              <motion.div key={i} className={styles.coreCard} variants={fadeIn}>
-                <div className={styles.coreCardTop}>
-                  <div className={styles.coreIconBox}>{srv.icon}</div>
-                  <h3>{srv.title}</h3>
-                  <p>{srv.desc}</p>
-                </div>
-                <div className={styles.coreCardImage}>
-                  <img src={srv.image} alt={srv.title} />
-                </div>
-              </motion.div>
+              <li key={i}>
+                <motion.article className={styles.coreCard} variants={fadeIn}>
+                  <div className={styles.coreCardTop}>
+                    <div className={styles.coreIconBox} aria-hidden="true">{srv.icon}</div>
+                    <h3>{srv.title}</h3>
+                    <p>{srv.desc}</p>
+                  </div>
+                  <div className={styles.coreCardImage}>
+                    <img src={srv.image} alt={srv.title} />
+                  </div>
+                </motion.article>
+              </li>
             ))}
-          </motion.div>
+          </motion.ul>
         </div>
       </section>
 
       {/* Bottom CTA */}
-      <section>
+      <section aria-label="Get involved with Hamro Samuh">
         <div>
           <div className={styles.ctaBanner}>
             <div className={styles.ctaLeft}>
@@ -164,6 +165,6 @@ export default function Services() {
         </div>
       </section>
 
-    </div>
+    </article>
   );
 }

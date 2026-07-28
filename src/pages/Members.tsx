@@ -18,6 +18,7 @@ import sanjayImg from '../assets/sanjay.png';
 import shreekantiImg from '../assets/shreekanti.jpeg';
 import bineshImage from '../assets/binesh.jpg';
 import binayImage from '../assets/binay.jpg';
+import surajImage from '../assets/suraj.jpg';
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -47,19 +48,20 @@ const members = [
   { name: "Shreekanti Devi", role: "Member", image: shreekantiImg, joined: "2023" },
   { name: "Binesh Das", role: "Member", image: bineshImage, joined: "2023" },
   { name: "Binay chaudhary", role: "Member", image: binayImage, joined: "2023" },
+  { name: "Suraj khawas", role: "Member", image: surajImage, joined: "2023" },
   
 
 ];
 
 export default function Members() {
   return (
-    <div className={styles.members}>
-      <section className={styles.membersSection}>
+    <article className={styles.members}>
+      <section className={styles.membersSection} aria-labelledby="members-title">
         <div className="container">
           <div className={styles.header}>
-            <h1 className={styles.title}>Our Members</h1>
+            <h1 id="members-title" className={styles.title}>Our Members</h1>
           </div>
-          <motion.div
+          <motion.ul
             className={styles.grid}
             initial="hidden"
             whileInView="visible"
@@ -67,8 +69,8 @@ export default function Members() {
             variants={staggerContainer}
           >
             {members.map((member, index) => (
-              <motion.div
-                key={index}
+              <li key={index}>
+              <motion.article
                 variants={fadeIn}
                 className={styles.card}
                 whileHover={{ y: -6 }}
@@ -87,11 +89,12 @@ export default function Members() {
                   <span className={styles.role}>{member.role}</span>
                   <p className={styles.joined}>Member since {member.joined}</p>
                 </div>
-              </motion.div>
+              </motion.article>
+              </li>
             ))}
-          </motion.div>
+          </motion.ul>
         </div>
       </section>
-    </div>
+    </article>
   );
 }
