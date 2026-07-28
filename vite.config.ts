@@ -1,14 +1,6 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import sitemap from "vite-plugin-sitemap";
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
-// https://vite.dev/config/
 export default defineConfig({
-  plugins: [
-    react(),
-    sitemap({
-      hostname: 'https://hamrosamuh.netlify.app',
-      dynamicRoutes: ['/about', '/services', '/members', '/contact', '/terms'],
-    }),
-  ],
-})
+  plugins: [react()],
+});
