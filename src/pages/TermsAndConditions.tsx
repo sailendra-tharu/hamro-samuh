@@ -117,17 +117,17 @@ export default function TermsAndConditions() {
           </section>
 
           {/* Section 7: Exit Policy */}
-          <section className={styles.section}>
+          {/* <section className={styles.section}>
             <h2>७. समूहबाट बाहिर निस्किने सम्बन्धमा</h2>
             <ul className={styles.bulletList}>
               <li>तीन वर्ष अगाडि निस्कियो भने <strong>Saving</strong> मात्र पाउनुहुन्छ।</li>
               {/* <li>तीन वर्ष पछि निस्कियो भने <strong>Saving</strong> + प्रत्येक वार्षिक <strong>Interest Add</strong> गरी पाउनुहुन्छ।</li> */}
-            </ul>
-          </section>
+            {/* </ul> */}
+          {/* </section> */}
 
           {/* Section 8: Secondary New Member Loan */}
           <section className={styles.section}>
-            <h2>८. Secondary नयाँ Member को Loan</h2>
+            <h2>७. Secondary नयाँ Member को Loan</h2>
             <ul className={styles.bulletList}>
               {/* <li>नयाँ member ६  महिनासम्म loan निस्काउन सक्नुहुन्न।</li> */}
               {/* <li>तीन महिनादेखि छ महिनासम्म loan secondary मा रु ७,००० सम्म मात्र निकाल्न मिल्दछ।</li> */}
@@ -138,7 +138,7 @@ export default function TermsAndConditions() {
 
           {/* Section 9: Secondary Loan & Interest */}
           <section className={styles.section}>
-            <h2>९. Secondary को Loan र Interest सम्बन्ध</h2>
+            <h2>८. Secondary को Loan र Interest सम्बन्ध</h2>
             <ul className={styles.bulletList}>
               <li>रु १,००० देखि रु १०,०००  सम्मको interest वार्षिक <strong>९%</strong> लागिनेछ।</li>
               <li>रु १० हजार देखि माथिको interest <strong>१२%</strong> लागिनेछ।</li>
@@ -154,10 +154,10 @@ export default function TermsAndConditions() {
 
           {/* Section 10: Share Market */}
           <section className={styles.section}>
-            <h2>१०. सेयर बजार सम्बन्धको</h2>
+            <h2>९. सेयर बजार सम्बन्धको</h2>
             <ul className={styles.bulletList}>
-              <li>जसजसको हाम्रो समूहको लागि Demat दिनुभएको छ भने पर्यो भने हाम्रो समूहको सेयर बिक्री भयो भने उसलाई <strong>१०% profit</strong> बाट दिने निर्णय गरेको छ।</li>
-              <li>जसजसको नाममा Demat हाम्रो समूहले खोलिदिएको छ उसले आफैं भनेर खोल्दैछ भने उसले पर्यो भने हाम्रो समूहको Saving मा <strong>१०% profit</strong> दिनुपर्ने निर्णय गरेको छ।</li>
+              <li>हाम्रो समूहको लागि Demat उपलब्ध गराउनुभएका सदस्यहरूको Demat मार्फत खरिद गरिएको सेयर बिक्री गर्दा नाफा भएमा, प्राप्त नाफाको १०% सम्बन्धित सदस्यलाई प्रदान गरिनेछ।</li>
+              <li>जुन सदस्यको नाममा हाम्रो समूहले Demat खाता खोलेको छ, उहाँले भविष्यमा उक्त Demat खाता व्यक्तिगत रूपमा प्रयोग गरी नाफा कमाउनुभयो भने, प्राप्त नाफाको १०% हाम्रो समूहको बचत (Saving) मा जम्मा गर्नुपर्ने निर्णय गरिएको छ।</li>
               <li>सेयरको लागि पैसा पठाएको त्यो पैसा आफ्नो <strong>Personal</strong> खर्च नगरिदिनुहोला यही अनुरोध छ।</li>
             </ul>
           </section>
