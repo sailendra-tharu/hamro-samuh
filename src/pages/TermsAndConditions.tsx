@@ -25,24 +25,24 @@ export default function TermsAndConditions() {
           <section className={styles.section}>
             <h2>१. बचत सम्बन्धी नियमहरू</h2>
             <ol className={styles.orderedList}>
-              <li>१ गते देखि ७ गते सम्म बचत गर्यो भने शुल्क लाग्दैन।</li>
-              <li>७ गते माथि बचत गर्यो भने रु. १०० शुल्क लाग्छ।</li>
+              <li>१ गते देखि १० गते सम्म बचत गर्यो भने शुल्क लाग्दैन।</li>
+              <li>१० गते माथि बचत गर्यो भने रु. १०० शुल्क लाग्छ।</li>
               <li>१ महिना को रू. १०० शुल्क</li>
               <li>२ महिना को रू. २५० शुल्क</li>
               <li>३ महिना को रू. ५०० शुल्क</li>
-              <li>४ महिना सम्म यदि रकम बझाएन्न भने समूहमा रहन्छन् र वचन ५ बर्ष को लागि</li>
-              <li>३ बर्ष यदि कुनै व्यक्ति समूह छोडेमा त्यो व्यक्ति को बचत मात्र रकम पाईन्छ।</li>
+              <li>लगातार ५ महिनासम्म पैसा नतिरेमा सदस्यको खाता बन्द हुनेछ। उहाँले बचत गरेको रकम समूह सकिएपछि बिना ब्याज फिर्ता गरिनेछ</li>
             </ol>
 
             <div className={styles.subSection}>
-              <h3>ऋण चाहेको</h3>
+              <h3>ऋण चाहेको मा (नयाँ सदस्यका लागि)</h3>
               <ul className={styles.bulletList}>
-                <li>३ महिना पिछे</li>
+                <li>६ महिना पछि</li>
+                {/* <li>१ वर्षमा Loan चुक्ता गर्न सक्नुहुन्न भने जति Loan रकम रहेकोमा त्यतिको interest जति Renewal लाग्दैछ।</li> */}
               </ul>
-              <h3>ऋण लिएमा</h3>
+              {/* <h3>ऋण लिएमा</h3>
               <ul className={styles.bulletList}>
                 <li>पहिलो चोटी ऋण लिन रू. ५०००  मात्र पाइन्छ।</li>
-              </ul>
+              </ul> */}
             </div>
           </section>
 
@@ -50,8 +50,10 @@ export default function TermsAndConditions() {
           <section className={styles.section}>
             <h2>२. समूहको Saving, Loan & Fine सम्बन्धमा</h2>
             <ul className={styles.bulletList}>
-              <li>यदि कसैले Loan लिएको वा महिनामा तिर्न पैसा तिर्दैन २ महिना सम्म उसलाई अर्को पालि देखि समूह बाट Loan हामी रू १५,००० मात्र दिन्छौं, त्यो बाहेक दिन मिल्दैन।</li>
-              <li>यदि कसैले Fine छ, अनि तिरेको छैन समयमा उसको Saving बाट काटिन्छ।</li>
+              <li>यदि कुनै सदस्यले ऋणको किस्ता वा मासिक बचत रकम लगातार २ महिनासम्म नतिरेमा, अर्को पटकदेखि उहाँलाई समूहबाट अधिकतम रु. १५,००० सम्म मात्र ऋण प्रदान गरिनेछ। यसभन्दा बढी रकमको ऋण उपलब्ध गराइने छैन।
+              </li>
+              <li>यदि कुनै सदस्यले जरिवाना (Fine) समयमै नतिरेमा, उक्त जरिवाना रकम पहिले उहाँको वार्षिक ब्याजबाट कट्टा गरिनेछ। यदि वार्षिक ब्याजले जरिवाना रकम नपुगेमा, बाँकी जरिवाना रकम उहाँको मूल बचत रकमबाट कट्टा गरिनेछ।
+                ।</li>
               <li>यदि कसैलाई समस्या छ, भने एक चोटि समूहको Group मा Information गरिदिनु होला, हामी हेरेर केही Decision लिन्छौं।</li>
             </ul>
           </section>
@@ -61,10 +63,10 @@ export default function TermsAndConditions() {
             <h2>३. Meeting तथा Loan सम्बन्धी नियमहरू</h2>
             <ul className={styles.bulletList}>
               <li>हामी हरेर महिनामा एक चोटि Meeting मा बस्छौं, पैसा Deposit भए पछि शनिबारको दिन।</li>
-              <li>हामी यो महिना देखि Emergency Loan को बेवास्ता नै गरिएको छौं, रू १०,००० अहिलेको लागि पूँजी बढे पछि अझै थापाला।</li>
+              {/* <li>हामी यो महिना देखि Emergency Loan को बेवास्ता नै गरिएको छौं, रू १०,००० अहिलेको लागि पूँजी बढे पछि अझै थापाला।</li> */}
               <li>यदि कसैलाई Loan चाहिएमा ७ वा १० दिन अगाडि समूहमा Information गारिदिनु होला।</li>
               <li>हामी प्रत्येक महिना रू ५० छुटयाएको छौं, समूहको Member लाई Notice गराउनको लागि।</li>
-              <li>Loan लिनु अगाडि Service Charge Deposit गरिदिनु होला।</li>
+              <li>Loan लिनु अगाडि Service Charge Deposit (१५०) गरिदिनु होला।</li>
             </ul>
           </section>
 
@@ -88,9 +90,10 @@ export default function TermsAndConditions() {
           <section className={styles.section}>
             <h2>५. नयाँ सदस्य र ऋण सुविधा</h2>
             <ol className={styles.orderedList}>
-              <li>हाम्रो समूहमा जोडेको नयाँ व्यक्ति ३ महिना सम्म ऋण निकाल्न मिल्दैन।</li>
-              <li>३ महिना पछि रू १५,०००  सम्म ऋण लिन मिल्दछ।</li>
-              <li>६ महिना देखि व्यक्ति कस्तो बचत (Saving) गर्दछ त्यो अनुसार ऋण दिन मिल्दछ।</li>
+              <li>हाम्रो समूहमा जोडेको नयाँ सदस्य ६ महिना सम्म ऋण निकाल्न मिल्दैन।</li>
+              {/* <li>३ महिना पछि रू १५,०००  सम्म ऋण लिन मिल्दछ।</li> */}
+              <li>यदि कुनै सदस्यले लगातार ६ महिनासम्म नियमित रूपमा बचत (Saving) गरेमा र आफ्नो बचत राम्रोसँग कायम राखेमा, उहाँले आवश्यकताअनुसार ऋण प्राप्त गर्न सक्नुहुनेछ।
+              </li>
             </ol>
           </section>
 
@@ -118,7 +121,7 @@ export default function TermsAndConditions() {
             <h2>७. समूहबाट बाहिर निस्किने सम्बन्धमा</h2>
             <ul className={styles.bulletList}>
               <li>तीन वर्ष अगाडि निस्कियो भने <strong>Saving</strong> मात्र पाउनुहुन्छ।</li>
-              <li>तीन वर्ष पछि निस्कियो भने <strong>Saving</strong> + प्रत्येक वार्षिक <strong>Interest Add</strong> गरी पाउनुहुन्छ।</li>
+              {/* <li>तीन वर्ष पछि निस्कियो भने <strong>Saving</strong> + प्रत्येक वार्षिक <strong>Interest Add</strong> गरी पाउनुहुन्छ।</li> */}
             </ul>
           </section>
 
@@ -126,9 +129,10 @@ export default function TermsAndConditions() {
           <section className={styles.section}>
             <h2>८. Secondary नयाँ Member को Loan</h2>
             <ul className={styles.bulletList}>
-              <li>नयाँ member तीन महिनासम्म loan निस्काउन सक्नुहुन्न।</li>
-              <li>तीन महिनादेखि छ महिनासम्म loan secondary मा रु ७,००० सम्म मात्र निकाल्न मिल्दछ।</li>
-              <li>६ महिनादेखि एक वर्ष मा member को बानी व्यवहार राम्रो देखियो भने बढी लोन दिन मिल्दछ।</li>
+              {/* <li>नयाँ member ६  महिनासम्म loan निस्काउन सक्नुहुन्न।</li> */}
+              {/* <li>तीन महिनादेखि छ महिनासम्म loan secondary मा रु ७,००० सम्म मात्र निकाल्न मिल्दछ।</li> */}
+              <li>सदस्य बनेको ६ महिना पूरा भएपछि Secondary Loan अन्तर्गत अधिकतम रु. ७,००० सम्म ऋण लिन पाइनेछ।
+              </li>
             </ul>
           </section>
 
@@ -136,13 +140,13 @@ export default function TermsAndConditions() {
           <section className={styles.section}>
             <h2>९. Secondary को Loan र Interest सम्बन्ध</h2>
             <ul className={styles.bulletList}>
-              <li>रु १,००० देखि रु १०,०००  सम्मको interest वार्षिक <strong>९%</strong> लाग्दैछ।</li>
-              <li>रु १० हजार देखि माथिको interest <strong>१२%</strong> लाग्दैछ।</li>
+              <li>रु १,००० देखि रु १०,०००  सम्मको interest वार्षिक <strong>९%</strong> लागिनेछ।</li>
+              <li>रु १० हजार देखि माथिको interest <strong>१२%</strong> लागिनेछ।</li>
             </ul>
             <div className={styles.exampleBox}>
               <h3>उदाहरण</h3>
               <ul className={styles.bulletList}>
-                <li>रु २,००,०००  को Loan — रु १० हजारको वार्षिक ९% + बाँकी १० हजारको १२% लाग्दैछ।</li>
+                <li>रु २०,०००  को Loan — रु १० हजारको वार्षिक ९% + बाँकी १० हजारको १२% लाग्दैछ।</li>
                 <li>१ वर्षमा Loan चुक्ता गर्न सक्नुहुन्न भने जति Loan रकम रहेकोमा त्यतिको interest जति <strong>Renewal</strong> लाग्दैछ।</li>
               </ul>
             </div>
