@@ -134,10 +134,18 @@ export default function Navbar() {
 
               {/* Login */}
               <div className={styles.mobileActions}>
-                <button type="button" className={styles.solidBtnMobile}>
-                  <UserPlus size={20} />
-                  Login
-                </button>
+                <div className={styles.mobileActions}>
+                  <button
+                    type="button"
+                    className={styles.solidBtnMobile}
+                    onClick={() => {
+                      window.location.href = "https://samuh.netlify.app/login";
+                    }}
+                  >
+                    <UserPlus size={20} />
+                    Login
+                  </button>
+                </div>
               </div>
             </motion.aside>
           </>
