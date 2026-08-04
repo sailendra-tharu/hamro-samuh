@@ -89,13 +89,13 @@ export default function Navbar() {
 
         {/* Desktop Login */}
         <div className={styles.actions}>
-          <Link
-            to="/login"
+          <a
+            href="https://samuh.netlify.app/login"
             className={styles.solidBtn}
           >
             <UserPlus size={20} />
             Login
-          </Link>
+          </a>
         </div>
 
 
