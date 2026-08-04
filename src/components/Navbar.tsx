@@ -55,7 +55,13 @@ export default function Navbar() {
 
         {/* Right: Actions */}
         <div className={styles.actions}>
-          <button type="button" className={styles.solidBtn}>
+          <button
+            type="button"
+            className={styles.solidBtn}
+            onClick={() => {
+              window.location.href = "https://samuh.netlify.app/login";
+            }}
+          >
             <UserPlus size={20} /> Login
           </button>
         </div>

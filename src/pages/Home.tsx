@@ -55,7 +55,13 @@ export default function Home() {
               <Link to="/contact" className={styles.solidBtn}>
                 <UserPlus size={18} /> Become a Member
               </Link>
-              <button type="button" className={styles.outlineBtn}>
+              <button
+                type="button"
+                className={styles.outlineBtn}
+                onClick={() => {
+                  window.location.href = "https://samuh.netlify.app/login";
+                }}
+              >
                 <User size={18} /> Member Login
               </button>
             </motion.div>
