@@ -31,10 +31,11 @@ export default function Navbar() {
     };
   }, []);
 
-  const loginUrl = "https://samuh.netlify.app/login";
-
   return (
-    <header className={`${styles.header} ${scrolled ? "glass" : ""}`}>
+    <header
+      className={`${styles.header} ${scrolled ? styles.glass : ""
+        }`}
+    >
       <div className={`container ${styles.navContainer}`}>
 
         {/* Logo */}
@@ -68,11 +69,10 @@ export default function Navbar() {
             <Link
               key={link.name}
               to={link.path}
-              className={`${styles.navLink} ${
-                location.pathname === link.path
+              className={`${styles.navLink} ${location.pathname === link.path
                   ? styles.active
                   : ""
-              }`}
+                }`}
             >
               {link.name}
 
@@ -89,13 +89,13 @@ export default function Navbar() {
 
         {/* Desktop Login */}
         <div className={styles.actions}>
-          <a
-            href={loginUrl}
+          <Link
+            to="/login"
             className={styles.solidBtn}
           >
             <UserPlus size={20} />
             Login
-          </a>
+          </Link>
         </div>
 
 
@@ -110,7 +110,6 @@ export default function Navbar() {
         </button>
 
       </div>
-
 
 
       {/* Mobile Menu */}
@@ -144,11 +143,14 @@ export default function Navbar() {
               }}
             >
 
-              {/* Mobile Logo */}
+              {/* Mobile Header */}
               <div className={styles.mobileHeader}>
 
-                <div className={styles.mobileLogo}>
-
+                <Link
+                  to="/"
+                  className={styles.mobileLogo}
+                  onClick={() => setIsOpen(false)}
+                >
                   <img
                     src="/logo.png"
                     alt="Hamro Samuh"
@@ -164,27 +166,23 @@ export default function Navbar() {
                       Together We Grow
                     </span>
                   </div>
-
-                </div>
+                </Link>
 
               </div>
 
 
 
               {/* Mobile Links */}
-              <nav
-                className={styles.mobileNav}
-              >
+              <nav className={styles.mobileNav}>
 
                 {navLinks.map((link) => (
                   <Link
                     key={link.name}
                     to={link.path}
-                    className={`${styles.mobileLink} ${
-                      location.pathname === link.path
+                    className={`${styles.mobileLink} ${location.pathname === link.path
                         ? styles.active
                         : ""
-                    }`}
+                      }`}
                     onClick={() =>
                       setIsOpen(false)
                     }
@@ -199,21 +197,14 @@ export default function Navbar() {
 
               {/* Mobile Login */}
               <div className={styles.mobileActions}>
-
                 <a
-                  href={loginUrl}
+                  href="https://samuh.netlify.app/login"
                   className={styles.solidBtnMobile}
-                  onClick={() =>
-                    setIsOpen(false)
-                  }
+                  onClick={() => setIsOpen(false)}
                 >
-
                   <UserPlus size={20} />
-
                   Login
-
                 </a>
-
               </div>
 
 
@@ -221,7 +212,6 @@ export default function Navbar() {
 
           </>
         )}
-
       </AnimatePresence>
 
     </header>

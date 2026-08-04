@@ -139,7 +139,7 @@
 .solidBtn, .solidBtnMobile {
   background: var(--accent-primary);
   color: white;
-  padding: 0.7rem 1.35rem;
+  padding: 0.4rem 1.1rem;
   font-size: 0.9rem;
 }
 
