@@ -25,7 +25,7 @@
 }
 
 .title {
-  font-size: clamp(2.25rem, 7vw, 4rem);
+  font-size: var(--font-size-display);
   font-weight: 800;
   line-height: 1.1;
   margin-bottom: 1rem;
@@ -37,7 +37,7 @@
 }
 
 .subtitle {
-  font-size: clamp(1.05rem, 2.5vw, 1.25rem);
+  font-size: var(--font-size-xl);
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 1.25rem;
@@ -45,7 +45,7 @@
 }
 
 .description {
-  font-size: clamp(0.9rem, 2vw, 0.95rem);
+  font-size: var(--font-size-base);
   color: var(--text-secondary);
   margin-bottom: 2.5rem;
   line-height: 1.6;
@@ -66,7 +66,7 @@
   padding: 0.875rem 1.5rem;
   border-radius: var(--radius-sm);
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: var(--font-size-sm);
   transition: all 0.2s ease;
   min-height: 48px;
   max-width: 100%;
@@ -152,7 +152,7 @@
 }
 
 .preTitle {
-  font-size: 0.8rem;
+  font-size: var(--font-size-xs);
   font-weight: 700;
   color: var(--accent-primary);
   text-transform: uppercase;
@@ -174,7 +174,7 @@
 }
 
 .sectionHeader h2 {
-  font-size: clamp(1.6rem, 4vw, 2rem);
+  font-size: var(--font-size-2xl);
   font-weight: 800;
   color: var(--text-primary);
 }
@@ -236,14 +236,14 @@
 }
 
 .serviceCard h3 {
-  font-size: 0.95rem;
+  font-size: var(--font-size-sm);
   font-weight: 700;
   margin-bottom: 0.5rem;
   color: var(--text-primary);
 }
 
 .serviceCard p {
-  font-size: 0.8rem;
+  font-size: var(--font-size-xs);
   color: var(--text-secondary);
   line-height: 1.4;
 }
@@ -287,14 +287,14 @@
 }
 
 .statItem dd {
-  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  font-size: var(--font-size-xl);
   font-weight: 800;
   line-height: 1.2;
   order: 1;
 }
 
 .statItem dt {
-  font-size: 0.85rem;
+  font-size: var(--font-size-sm);
   opacity: 0.9;
   order: 2;
 }
@@ -331,12 +331,13 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  min-height: 52px;
   margin-bottom: 1.5rem;
   color: var(--accent-primary);
 }
 
 .infoColHeader h3 {
-  font-size: 0.9rem;
+  font-size: var(--font-size-sm);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -347,7 +348,7 @@
 }
 
 .infoText {
-  font-size: 0.9rem;
+  font-size: var(--font-size-sm);
   color: var(--text-secondary);
   line-height: 1.6;
   margin-bottom: 1rem;
@@ -361,13 +362,24 @@
 }
 
 .learnMore {
-  font-size: 0.9rem;
-  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: fit-content;
+  min-height: 44px;
+  padding: 0.625rem 1rem;
+  border: 1px solid var(--accent-primary);
+  border-radius: var(--radius-sm);
+  background: var(--accent-lightest);
+  font-size: var(--font-size-sm);
+  font-weight: 700;
   color: var(--accent-primary);
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
 .learnMore:hover {
-  text-decoration: underline;
+  background: var(--accent-primary);
+  color: white;
 }
 
 /* Steps List */
@@ -375,8 +387,8 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  padding-top: 1rem;
   list-style: none;
-  padding: 0;
   margin: 0;
 }
 
@@ -386,28 +398,28 @@
 }
 
 .stepNum {
-  width: 24px;
-  height: 24px;
-  background: var(--accent-primary);
-  color: white;
+  width: 32px;
+  height: 32px;
+  background: var(--accent-lightest);
+  color: var(--accent-primary);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.8rem;
+  font-size: var(--font-size-xs);
   font-weight: 700;
   flex-shrink: 0;
 }
 
 .stepItem h4 {
-  font-size: 0.95rem;
+  font-size: var(--font-size-sm);
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 0.25rem;
 }
 
 .stepItem p {
-  font-size: 0.85rem;
+  font-size: var(--font-size-sm);
   color: var(--text-secondary);
   line-height: 1.4;
 }
@@ -427,7 +439,7 @@
 }
 
 .testimonialCard p {
-  font-size: 0.9rem;
+  font-size: var(--font-size-sm);
   color: var(--text-primary);
   font-style: italic;
   margin-bottom: 1rem;
@@ -446,14 +458,14 @@
   object-fit: cover;
 }
 
-.testimonialAuthor h5 {
-  font-size: 0.9rem;
+.testimonialAuthor h4 {
+  font-size: var(--font-size-sm);
   font-weight: 700;
   color: var(--text-primary);
 }
 
 .testimonialAuthor span {
-  font-size: 0.8rem;
+  font-size: var(--font-size-xs);
   color: var(--text-muted);
 }
 
@@ -481,33 +493,31 @@
 .announcementIcon {
   width: 32px;
   height: 32px;
-  border-radius: var(--radius-sm);
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  background: var(--accent-lightest);
+  color: var(--accent-primary);
 }
 
-.pinkIcon { background: #fce7f3; color: #ec4899; }
-.yellowIcon { background: #fef9c3; color: #eab308; }
-.blueIcon { background: #e0e7ff; color: #6366f1; }
-
 .announcementCard h4 {
-  font-size: 0.95rem;
+  font-size: var(--font-size-sm);
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 0.25rem;
 }
 
 .announcementCard p {
-  font-size: 0.85rem;
+  font-size: var(--font-size-sm);
   color: var(--text-secondary);
   line-height: 1.4;
   margin-bottom: 0.5rem;
 }
 
 .announcementCard time {
-  font-size: 0.75rem;
+  font-size: var(--font-size-xs);
   color: var(--text-muted);
   font-weight: 500;
 }
@@ -524,7 +534,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 1.5rem;
   height: 100%;
   max-width: 100%;
@@ -535,6 +546,7 @@
   .ctaBanner {
     flex-direction: row;
     padding: 2rem 3rem;
+    gap: clamp(2rem, 5vw, 4rem);
   }
 }
 
@@ -542,6 +554,7 @@
   display: flex;
   align-items: center;
   gap: 1.5rem;
+  flex: 1 1 560px;
   min-width: 0;
 }
 
@@ -558,14 +571,14 @@
 }
 
 .ctaText h2 {
-  font-size: clamp(1.05rem, 2.5vw, 1.25rem);
+  font-size: var(--font-size-xl);
   font-weight: 800;
   color: var(--text-primary);
   margin-bottom: 0.25rem;
 }
 
 .ctaText p {
-  font-size: 0.9rem;
+  font-size: var(--font-size-sm);
   color: var(--text-secondary);
 }
 

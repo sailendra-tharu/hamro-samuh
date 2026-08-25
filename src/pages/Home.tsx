@@ -57,7 +57,7 @@ export default function Home() {
               </Link>
               <button
                 type="button"
-                className={styles.outlineBtn}
+                className={styles.solidBtn}
                 onClick={() => {
                   window.location.href = "https://samuh.netlify.app/login";
                 }}
@@ -189,7 +189,7 @@ export default function Home() {
                 <div className={styles.testimonialAuthor}>
                   <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&w=100&q=80" alt="Sita Thapa" />
                   <div>
-                    <h5>Sita Thapa</h5>
+                    <h4>Sita Thapa</h4>
                     <span>Member</span>
                   </div>
                 </div>
@@ -199,7 +199,7 @@ export default function Home() {
                 <div className={styles.testimonialAuthor}>
                   <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&w=100&q=80" alt="Ram Bahadur" />
                   <div>
-                    <h5>Ram Bahadur</h5>
+                    <h4>Ram Bahadur</h4>
                     <span>Member</span>
                   </div>
                 </div>
@@ -215,7 +215,7 @@ export default function Home() {
             </div>
             <div className={styles.announcementsList}>
               <article className={styles.announcementCard}>
-                <div className={`${styles.announcementIcon} ${styles.pinkIcon}`}><Calendar size={18} /></div>
+                <div className={styles.announcementIcon} aria-hidden="true"><Calendar size={18} /></div>
                 <div>
                   <h4>Monthly Meeting</h4>
                   <p>Monthly meeting will be held on 15th of every month.</p>
@@ -223,7 +223,7 @@ export default function Home() {
                 </div>
               </article>
               <article className={styles.announcementCard}>
-                <div className={`${styles.announcementIcon} ${styles.yellowIcon}`}><Star size={18} /></div>
+                <div className={styles.announcementIcon} aria-hidden="true"><Star size={18} /></div>
                 <div>
                   <h4>New Feature</h4>
                   <p>We have introduced online report generation.</p>
@@ -231,7 +231,7 @@ export default function Home() {
                 </div>
               </article>
               <article className={styles.announcementCard}>
-                <div className={`${styles.announcementIcon} ${styles.blueIcon}`}><Bell size={18} /></div>
+                <div className={styles.announcementIcon} aria-hidden="true"><Bell size={18} /></div>
                 <div>
                   <h4>Holiday Notice</h4>
                   <p>Office will remain closed on Buddha Purnima.</p>

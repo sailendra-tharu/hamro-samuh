@@ -51,7 +51,7 @@
 }
 
 .logoTitle {
-  font-size: clamp(0.9rem, 3.2vw, 1.25rem);
+  font-size: var(--font-size-lg);
   font-weight: 800;
   line-height: 1;
   color: var(--accent-primary);
@@ -60,7 +60,7 @@
 }
 
 .logoSubtitle {
-  font-size: clamp(0.58rem, 1.8vw, 0.7rem);
+  font-size: var(--font-size-xs);
   color: var(--accent-light);
   font-weight: 600;
   letter-spacing: 0.2px;
@@ -81,7 +81,7 @@
 .navLink {
   position: relative;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: var(--font-size-base);
   color: var(--text-primary);
   transition: color 0.2s ease;
   padding: 0.5rem 0;
@@ -121,7 +121,7 @@
   padding: 0.6rem 1.25rem;
   border-radius: var(--radius-sm);
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: var(--font-size-sm);
   transition: all 0.2s ease;
 }
 
@@ -140,7 +140,7 @@
   background: var(--accent-primary);
   color: white;
   padding: 0.4rem 1.1rem;
-  font-size: 0.9rem;
+  font-size: var(--font-size-sm);
 }
 
 .solidBtn svg,
