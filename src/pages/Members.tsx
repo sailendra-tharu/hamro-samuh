@@ -19,6 +19,9 @@ import shreekantiImg from '../assets/shreekanti.jpeg';
 import bineshImage from '../assets/binesh.jpg';
 import binayImage from '../assets/binay.jpg';
 import surajImage from '../assets/suraj.jpg';
+import rajImage from '../assets/raj.png';
+import yubrajImage from '../assets/yubraj.png';
+import zebinImage from '../assets/zebin.png';
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -47,8 +50,11 @@ const members = [
   { name: "Sanjay Chaudhary", role: "Member", image: sanjayImg, joined: "2083" },
   { name: "Shreekanti Devi", role: "Member", image: shreekantiImg, joined: "2080" },
   { name: "Binesh Das", role: "Member", image: bineshImage, joined: "2083" },
-  { name: "Binay chaudhary", role: "Member", image: binayImage, joined: "2083" },
-  { name: "Suraj khawas", role: "Member", image: surajImage, joined: "2083" },
+  { name: "Binay Chaudhary", role: "Member", image: binayImage, joined: "2083" },
+  { name: "Suraj Khawas", role: "Member", image: surajImage, joined: "2083" },
+  { name: "Raj Panjiyar", role: "Member", image: rajImage, joined: "2083" },
+  { name: "Yubraj Gurung", role: "Member", image: yubrajImage, joined: "2083" },
+  { name: "Zebin Gurung", role: "Member", image: zebinImage, joined: "2083" },
   
 
 ];
