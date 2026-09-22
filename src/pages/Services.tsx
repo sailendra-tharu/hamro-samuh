@@ -48,7 +48,7 @@ const services = [
 ];
 
 export default function Services() {
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
 
   return (
     <article className={styles.services}>
@@ -77,7 +77,17 @@ export default function Services() {
             variants={staggerContainer}
           >
             <motion.h1 id="services-title" variants={fadeIn} className={styles.title}>
-              {t('services.hero.title')}
+              {language === 'np' ? (
+                <>
+                  <span>{t('services.hero.title.rest')}</span>{' '}
+                  <span className={styles.titleHighlight}>{t('services.hero.title.highlight')}</span>
+                </>
+              ) : (
+                <>
+                  <span className={styles.titleHighlight}>{t('services.hero.title.highlight')}</span>{' '}
+                  <span>{t('services.hero.title.rest')}</span>
+                </>
+              )}
             </motion.h1>
             <motion.p variants={fadeIn} className={styles.description}>
               {t('services.hero.description')}

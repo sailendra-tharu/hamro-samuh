@@ -103,6 +103,10 @@
   color: var(--text-primary);
 }
 
+.titleHighlight {
+  color: var(--accent-primary);
+}
+
 .description {
   font-size: 1rem;
   color: var(--text-secondary);

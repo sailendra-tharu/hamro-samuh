@@ -109,6 +109,8 @@ const translations: Record<Language, Record<string, string>> = {
     'about.quote': 'Alone we can do so little; together we can do so much.',
 
     'services.hero.title': 'Working Together for a Better Tomorrow',
+    'services.hero.title.highlight': 'Working Together',
+    'services.hero.title.rest': 'for a Better Tomorrow',
     'services.hero.description': 'At Hamro Samuh, we believe that financial growth begins with trust and cooperation. By encouraging regular savings, providing responsible lending, and maintaining transparent financial management, we empower our members to achieve their goals while building a stronger, more resilient community together.',
     'services.hero.button': 'Explore Our Services',
     'services.mission': 'Our Mission',
@@ -299,6 +301,8 @@ const translations: Record<Language, Record<string, string>> = {
     'about.quote': 'एक्लै हामी थोरै मात्र गर्न सक्छौँ; सँगै मिलेर धेरै गर्न सक्छौँ।',
 
     'services.hero.title': 'राम्रो भोलिका लागि सँगै काम गर्दै',
+    'services.hero.title.highlight': 'सँगै काम गर्दै',
+    'services.hero.title.rest': 'राम्रो भोलिका लागि',
     'services.hero.description': 'हाम्रो समूहमा वित्तीय विकास विश्वास र सहकार्यबाट सुरु हुन्छ भन्ने हाम्रो विश्वास छ। नियमित बचत, जिम्मेवार ऋण र पारदर्शी वित्तीय व्यवस्थापनमार्फत हामी सदस्यहरूलाई आफ्ना लक्ष्य हासिल गर्न सक्षम बनाउँदै अझ बलियो र लचिलो समुदाय निर्माण गर्छौं।',
     'services.hero.button': 'हाम्रा सेवाहरू हेर्नुहोस्',
     'services.mission': 'हाम्रो लक्ष्य',
