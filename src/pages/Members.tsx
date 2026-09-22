@@ -22,6 +22,7 @@ import surajImage from '../assets/suraj.jpg';
 import rajImage from '../assets/raj.png';
 import yubrajImage from '../assets/yubraj.png';
 import zebinImage from '../assets/zebin.png';
+import akashImage from '../assets/akash.png';
 import { useLanguage } from '../context/LanguageContext';
 
 const fadeIn = {
@@ -56,6 +57,7 @@ const members = [
   { name: "Raj Panjiyar", role: "Member", image: rajImage, joined: "2083" },
   { name: "Yubraj Gurung", role: "Member", image: yubrajImage, joined: "2083" },
   { name: "Zebin Gurung", role: "Member", image: zebinImage, joined: "2083" },
+  { name: "Akash Chaudhary", role: "Member", image: akashImage, joined: "2083" },
   
 
 ];
