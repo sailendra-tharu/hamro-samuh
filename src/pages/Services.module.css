@@ -206,6 +206,10 @@
   gap: 1.5rem;
 }
 
+.coreGrid > li {
+  display: flex;
+}
+
 @media (min-width: 640px) {
   .coreGrid {
     grid-template-columns: repeat(2, 1fr);
@@ -233,6 +237,8 @@
   flex-direction: column;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   min-width: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .coreCard:hover {
@@ -291,6 +297,7 @@
 /* ── Bottom CTA ── */
 .bottomCta {
   padding: 0 0 4rem 0;
+  background: var(--bg-surface);
 }
 
 .ctaBanner {

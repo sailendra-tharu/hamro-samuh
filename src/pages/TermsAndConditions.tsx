@@ -1,7 +1,10 @@
 import { motion } from 'framer-motion';
 import styles from './Terms.module.css';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function TermsAndConditions() {
+  const { t } = useLanguage();
+
   return (
     <article className={styles.terms}>
       <div className="container">
@@ -10,8 +13,8 @@ export default function TermsAndConditions() {
           animate={{ opacity: 1, y: 0 }}
           className={styles.header}
         >
-          <h1>नियम तथा <span className={styles.highlight}>सर्तहरू</span></h1>
-          <p className={styles.subtitle}>हाम्रो समूहमा सहभागी हुनु अघि यी नियमहरू ध्यानपूर्वक पढ्नुहोस्।</p>
+          <h1>{t('terms.title')} <span className={styles.highlight}>{t('terms.titleHighlight')}</span></h1>
+          <p className={styles.subtitle}>{t('terms.subtitle')}</p>
         </motion.header>
 
         <motion.div
@@ -23,20 +26,15 @@ export default function TermsAndConditions() {
 
           {/* Section 1: Savings Rules */}
           <section className={styles.section}>
-            <h2>१. बचत सम्बन्धी नियमहरू</h2>
+            <h2>{t('terms.savings.title')}</h2>
             <ol className={styles.orderedList}>
-              <li>१ गते देखि १० गते सम्म बचत गर्यो भने शुल्क लाग्दैन।</li>
-              <li>१० गते माथि बचत गर्यो भने रु. १०० शुल्क लाग्छ।</li>
-              <li>१ महिना को रू. १०० शुल्क</li>
-              <li>२ महिना को रू. २५० शुल्क</li>
-              <li>३ महिना को रू. ५०० शुल्क</li>
-              <li>लगातार ५ महिनासम्म पैसा नतिरेमा सदस्यको खाता बन्द हुनेछ। उहाँले बचत गरेको रकम समूह सकिएपछि बिना ब्याज फिर्ता गरिनेछ</li>
+              {['terms.savings.1', 'terms.savings.2', 'terms.savings.3', 'terms.savings.4', 'terms.savings.5', 'terms.savings.6'].map(key => <li key={key}>{t(key)}</li>)}
             </ol>
 
             <div className={styles.subSection}>
-              <h3>ऋण चाहेको मा (नयाँ सदस्यका लागि)</h3>
+              <h3>{t('terms.newMemberLoan.title')}</h3>
               <ul className={styles.bulletList}>
-                <li>६ महिना पछि</li>
+                <li>{t('terms.newMemberLoan.1')}</li>
                 {/* <li>१ वर्षमा Loan चुक्ता गर्न सक्नुहुन्न भने जति Loan रकम रहेकोमा त्यतिको interest जति Renewal लाग्दैछ।</li> */}
               </ul>
               {/* <h3>ऋण लिएमा</h3>
@@ -48,70 +46,67 @@ export default function TermsAndConditions() {
 
           {/* Section 2: Saving, Loan & Fine */}
           <section className={styles.section}>
-            <h2>२. समूहको Saving, Loan & Fine सम्बन्धमा</h2>
+            <h2>{t('terms.loanFine.title')}</h2>
             <ul className={styles.bulletList}>
-              <li>यदि कुनै सदस्यले ऋणको किस्ता वा मासिक बचत रकम लगातार २ महिनासम्म नतिरेमा, अर्को पटकदेखि उहाँलाई समूहबाट अधिकतम रु. १५,००० सम्म मात्र ऋण प्रदान गरिनेछ। यसभन्दा बढी रकमको ऋण उपलब्ध गराइने छैन।
-              </li>
-              <li>यदि कुनै सदस्यले जरिवाना (Fine) समयमै नतिरेमा, उक्त जरिवाना रकम पहिले उहाँको वार्षिक ब्याजबाट कट्टा गरिनेछ। यदि वार्षिक ब्याजले जरिवाना रकम नपुगेमा, बाँकी जरिवाना रकम उहाँको मूल बचत रकमबाट कट्टा गरिनेछ।
-                ।</li>
-              <li>यदि कसैलाई समस्या छ, भने एक चोटि समूहको Group मा Information गरिदिनु होला, हामी हेरेर केही Decision लिन्छौं।</li>
+              <li>{t('terms.loanFine.1')}</li>
+              <li>{t('terms.loanFine.2')}</li>
+              <li>{t('terms.loanFine.3')}</li>
             </ul>
           </section>
 
           {/* Section 3: Meeting & Loan Rules */}
           <section className={styles.section}>
-            <h2>३. Meeting तथा Loan सम्बन्धी नियमहरू</h2>
+            <h2>{t('terms.meeting.title')}</h2>
             <ul className={styles.bulletList}>
-              <li>हामी हरेर महिनामा एक चोटि Meeting मा बस्छौं, पैसा Deposit भए पछि शनिबारको दिन।</li>
+              <li>{t('terms.meeting.1')}</li>
               {/* <li>हामी यो महिना देखि Emergency Loan को बेवास्ता नै गरिएको छौं, रू १०,००० अहिलेको लागि पूँजी बढे पछि अझै थापाला।</li> */}
-              <li>यदि कसैलाई Loan चाहिएमा ७ वा १० दिन अगाडि समूहमा Information गारिदिनु होला।</li>
-              <li>हामी प्रत्येक महिना रू ५० छुटयाएको छौं, समूहको Member लाई Notice गराउनको लागि।</li>
-              <li>Loan लिनु अगाडि Service Charge Deposit (१५०) गरिदिनु होला।</li>
+              <li>{t('terms.meeting.2')}</li>
+              <li>{t('terms.meeting.3')}</li>
+              <li>{t('terms.meeting.4')}</li>
             </ul>
           </section>
 
           {/* Section 4: Interest Rates */}
           <section className={styles.section}>
-            <h2>४. ब्याज दर (Interest Rate)</h2>
+            <h2>{t('terms.interest.title')}</h2>
             <ol className={styles.orderedList}>
-              <li>रू. ०  देखि रू. ५०,०००  सम्मको ऋण बार्षिक ब्याज <strong>९%</strong> लाग्दछ।</li>
-              <li>रू. ५०,०००  देखि माथिको ऋणको ब्याज <strong>१२%</strong> लाग्दछ।</li>
+              <li>{t('terms.interest.1')}</li>
+              <li>{t('terms.interest.2')}</li>
             </ol>
 
             <div className={styles.exampleBox}>
-              <h3>उदाहरणको लागि</h3>
+              <h3>{t('terms.example.for')}</h3>
               <ul className={styles.bulletList}>
-                <li>रू ७,००,००० ऋण लिएको भने — रू ५,०,०००  को बार्षिक ९% + रू २,०,०००  को १२% लाग्दछ।</li>
+                <li>{t('terms.interest.example')}</li>
               </ul>
             </div>
           </section>
 
           {/* Section 5: New Member Loan */}
           <section className={styles.section}>
-            <h2>५. नयाँ सदस्य र ऋण सुविधा</h2>
+            <h2>{t('terms.newLoan.title')}</h2>
             <ol className={styles.orderedList}>
-              <li>हाम्रो समूहमा जोडेको नयाँ सदस्य ६ महिना सम्म ऋण निकाल्न मिल्दैन।</li>
+              <li>{t('terms.newLoan.1')}</li>
               {/* <li>३ महिना पछि रू १५,०००  सम्म ऋण लिन मिल्दछ।</li> */}
-              <li>यदि कुनै सदस्यले लगातार ६ महिनासम्म नियमित रूपमा बचत (Saving) गरेमा र आफ्नो बचत राम्रोसँग कायम राखेमा, उहाँले आवश्यकताअनुसार ऋण प्राप्त गर्न सक्नुहुनेछ।
-              </li>
+              <li>{t('terms.newLoan.2')}</li>
             </ol>
           </section>
 
 
           {/* Section 6: Profit & Secondary Saving */}
           <section className={styles.section}>
-            <h2>६. नाफा वितरण तथा Secondary Saving</h2>
+            <h2>{t('terms.profit.title')}</h2>
             <ol className={styles.orderedList}>
-              <li>हाम्रो समूहको नाममा बार्षिक Total Profit बाट ५% Saving गर्ने निर्णय गरेको छ।</li>
-              <li><strong>जसले हिसाब किताब गरिराखेको छ भने</strong> बार्षिक Total Profit बाट २% हुने गरी दिने निर्णय गरेको छ।</li>
-              <li><strong>Secondary Saving</strong> मा नयाँ व्यक्ति join २०८२/१०/०१ गते देखि २०८३/०९/३० गते सम्म कुनै शुल्क लाग्दैन यदि त्योभन्दा बढी भएमा रु ५० को दरले शुल्क लाग्ने निर्णय गरिएको।</li>
+              <li>{t('terms.profit.1')}</li>
+              <li>{t('terms.profit.2')}</li>
+              <li>{t('terms.profit.3')}</li>
             </ol>
             <div className={styles.subSection}>
-              <h3>Secondary Saving शुल्क सम्बन्धमा</h3>
+              <h3>{t('terms.secondaryFee.title')}</h3>
               <ul className={styles.bulletList}>
-                <li>पहिलो महिनामा saving छुटे वा नभरेमा रु २० शुल्क लाग्दैछ।</li>
-                <li>दोस्रो महिनामा रु ५० को शुल्क लाग्दछ।</li>
-                <li>तेस्रो महिनामा रु १०० को शुल्क लाग्दछ।</li>
+                <li>{t('terms.secondaryFee.1')}</li>
+                <li>{t('terms.secondaryFee.2')}</li>
+                <li>{t('terms.secondaryFee.3')}</li>
               </ul>
             </div>
           </section>
@@ -127,45 +122,44 @@ export default function TermsAndConditions() {
 
           {/* Section 8: Secondary New Member Loan */}
           <section className={styles.section}>
-            <h2>७. Secondary नयाँ Member को Loan</h2>
+            <h2>{t('terms.secondaryNewLoan.title')}</h2>
             <ul className={styles.bulletList}>
               {/* <li>नयाँ member ६  महिनासम्म loan निस्काउन सक्नुहुन्न।</li> */}
               {/* <li>तीन महिनादेखि छ महिनासम्म loan secondary मा रु ७,००० सम्म मात्र निकाल्न मिल्दछ।</li> */}
-              <li>सदस्य बनेको ६ महिना पूरा भएपछि Secondary Loan अन्तर्गत अधिकतम रु. ७,००० सम्म ऋण लिन पाइनेछ।
-              </li>
+              <li>{t('terms.secondaryNewLoan.1')}</li>
             </ul>
           </section>
 
           {/* Section 9: Secondary Loan & Interest */}
           <section className={styles.section}>
-            <h2>८. Secondary को Loan र Interest सम्बन्ध</h2>
+            <h2>{t('terms.secondaryInterest.title')}</h2>
             <ul className={styles.bulletList}>
-              <li>रु १,००० देखि रु १०,०००  सम्मको interest वार्षिक <strong>९%</strong> लागिनेछ।</li>
-              <li>रु १० हजार देखि माथिको interest <strong>१२%</strong> लागिनेछ।</li>
+              <li>{t('terms.secondaryInterest.1')}</li>
+              <li>{t('terms.secondaryInterest.2')}</li>
             </ul>
             <div className={styles.exampleBox}>
-              <h3>उदाहरण</h3>
+              <h3>{t('terms.example.for')}</h3>
               <ul className={styles.bulletList}>
-                <li>रु २०,०००  को Loan — रु १० हजारको वार्षिक ९% + बाँकी १० हजारको १२% लाग्दैछ।</li>
-                <li>१ वर्षमा Loan चुक्ता गर्न सक्नुहुन्न भने जति Loan रकम रहेकोमा त्यतिको interest जति <strong>Renewal</strong> लाग्दैछ।</li>
+                <li>{t('terms.secondaryInterest.example.1')}</li>
+                <li>{t('terms.secondaryInterest.example.2')}</li>
               </ul>
             </div>
           </section>
 
           {/* Section 10: Share Market */}
           <section className={styles.section}>
-            <h2>९. सेयर बजार सम्बन्धको</h2>
+            <h2>{t('terms.share.title')}</h2>
             <ul className={styles.bulletList}>
-              <li>हाम्रो समूहको लागि Demat उपलब्ध गराउनुभएका सदस्यहरूको Demat मार्फत खरिद गरिएको सेयर बिक्री गर्दा नाफा भएमा, प्राप्त नाफाको १०% सम्बन्धित सदस्यलाई प्रदान गरिनेछ।</li>
-              <li>जुन सदस्यको नाममा हाम्रो समूहले Demat खाता खोलेको छ, उहाँले भविष्यमा उक्त Demat खाता व्यक्तिगत रूपमा प्रयोग गरी नाफा कमाउनुभयो भने, प्राप्त नाफाको १०% हाम्रो समूहको बचत (Saving) मा जम्मा गर्नुपर्ने निर्णय गरिएको छ।</li>
-              <li>सेयरको लागि पैसा पठाएको त्यो पैसा आफ्नो <strong>Personal</strong> खर्च नगरिदिनुहोला यही अनुरोध छ।</li>
+              <li>{t('terms.share.1')}</li>
+              <li>{t('terms.share.2')}</li>
+              <li>{t('terms.share.3')}</li>
             </ul>
           </section>
 
           {/* Footer Note */}
           <footer className={styles.footerNote}>
-            <p>२०८२/०९/२०</p>
-            <p><strong>धन्यवाद</strong></p>
+            <p>{t('terms.date')}</p>
+            <p><strong>{t('terms.thankYou')}</strong></p>
           </footer>
 
         </motion.div>

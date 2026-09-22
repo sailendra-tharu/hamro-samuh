@@ -1,19 +1,23 @@
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import styles from './Footer.module.css';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className={styles.footer}>
       <div className={`container ${styles.footerGrid}`}>
         <section className={styles.brandCol} aria-labelledby="footer-brand-title">
           <Link to="/" className={styles.logo}>
-            <img src="/logo.png" alt="Hamro Samuh" className={styles.logoImage} />
-            <span id="footer-brand-title" className={styles.logoName}>Hamro Samuh</span>
+            <img src="/logo.png" alt={t('brand.name')} className={styles.logoImage} />
+            <span id="footer-brand-title" className={styles.logoName}>{t('brand.name')}</span>
           </Link>
           <p className={styles.description}>
-At Hamro Samuh, we believe that every small contribution has the power to create meaningful change. By combining the strength of our members with transparent financial management, responsible savings, and community-focused lending, we work together to improve lives, encourage economic stability, and build a prosperous future rooted in trust, unity, and mutual support.          </p>
-          <nav className={styles.socials} aria-label="Social media links">
+            {t('footer.description')}
+          </p>
+          <nav className={styles.socials} aria-label={t('footer.socialLinks')}>
             <a href="https://www.facebook.com/" target="_blank" rel="noreferrer" aria-label="Facebook">
               <svg viewBox="0 0 24 24" aria-hidden="true" className={styles.socialIcon}>
                 <path d="M24 12.073C24 5.446 18.627.073 12 .073S0 5.446 0 12.073c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073Z" />
@@ -35,23 +39,23 @@ At Hamro Samuh, we believe that every small contribution has the power to create
         </section>
 
         <nav className={styles.linksCol} aria-labelledby="footer-links-title">
-          <h3 id="footer-links-title">Quick Links</h3>
+          <h3 id="footer-links-title">{t('footer.quickLinks')}</h3>
           <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About</Link></li>
-            <li><Link to="/services">Services</Link></li>
-            <li><Link to="/members">Members</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
-            <li><Link to="/terms">Terms & Conditions</Link></li>
+            <li><Link to="/">{t('nav.home')}</Link></li>
+            <li><Link to="/about">{t('nav.about')}</Link></li>
+            <li><Link to="/services">{t('nav.services')}</Link></li>
+            <li><Link to="/members">{t('nav.members')}</Link></li>
+            <li><Link to="/contact">{t('nav.contact')}</Link></li>
+            <li><Link to="/terms">{t('nav.terms')}</Link></li>
           </ul>
         </nav>
 
         <section className={styles.contactCol} aria-labelledby="footer-contact-title">
-          <h3 id="footer-contact-title">Contact Us</h3>
+          <h3 id="footer-contact-title">{t('footer.contactUs')}</h3>
           <address>
             <ul>
-              <li><MapPin size={18} /> <span>Shankarsaraiya, Birgunj, Nepal</span></li>
-              <li><Phone size={18} /> <a href="tel:+9779823092963">+977 9823092963</a></li>
+              <li><MapPin size={18} /> <span>{t('footer.address')}</span></li>
+              <li><Phone size={18} /> <a href="tel:+9779823092963">{t('footer.phone')}</a></li>
               <li><Mail size={18} /> <a href="mailto:support.hamrosamuh@gmail.com">support.hamrosamuh@gmail.com</a></li>
             </ul>
           </address>
@@ -59,7 +63,7 @@ At Hamro Samuh, we believe that every small contribution has the power to create
       </div>
       <div className={styles.bottomBar}>
         <div className="container">
-          <p>&copy; {new Date().getFullYear()} Hamro Samuh. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} {t('brand.name')}. {t('footer.rights')}</p>
         </div>
       </div>
     </footer>

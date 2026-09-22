@@ -3,6 +3,7 @@ import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
 import { CheckCircle2, Send, XCircle } from "lucide-react";
 import styles from "./Contact.module.css";
+import { useLanguage } from "../context/LanguageContext";
 
 const emailJsConfig = {
   serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID,
@@ -15,6 +16,7 @@ console.log("TEMPLATE:", emailJsConfig.templateId);
 console.log("PUBLIC:", emailJsConfig.publicKey);
 
 export default function Contact() {
+  const { t } = useLanguage();
   const form = useRef<HTMLFormElement>(null);
   const [toast, setToast] = useState<{
     type: "success" | "error";
@@ -46,7 +48,7 @@ export default function Contact() {
 
     setToast({
       type: "error",
-      message: "Message service is not configured. Please try again later.",
+      message: t('contact.notConfigured'),
     });
 
     return;
@@ -64,7 +66,7 @@ export default function Contact() {
 
     setToast({
       type: "success",
-      message: "Message sent successfully!",
+      message: t('contact.success'),
     });
 
     form.current.reset();
@@ -84,7 +86,7 @@ export default function Contact() {
 
     setToast({
       type: "error",
-      message: error?.text || "Failed to send message.",
+      message: error?.text || t('contact.failed'),
     });
   }
 };
@@ -111,12 +113,11 @@ export default function Contact() {
           className={styles.header}
         >
           <h1 id="contact-title">
-            Get in <span className="text-gradient">Touch</span>
+            {t('contact.title')} <span className="text-gradient">{t('contact.titleHighlight')}</span>
           </h1>
 
           <p className={styles.subtitle}>
-            We'd love to hear from you. Send us a message and we'll respond as
-            soon as possible.
+            {t('contact.description')}
           </p>
         </motion.header>
 
@@ -127,44 +128,44 @@ export default function Contact() {
           transition={{ delay: 0.2 }}
           className={styles.formContainer}
         >
-          <h2 id="contact-form-title" className="sr-only">Send us a message</h2>
+          <h2 id="contact-form-title" className="sr-only">{t('contact.formTitle')}</h2>
           <form
             ref={form}
             onSubmit={sendEmail}
             className={styles.form}
           >
             <div className={styles.inputGroup}>
-              <label htmlFor="name">Full Name</label>
+              <label htmlFor="name">{t('contact.fullName')}</label>
 
               <input
                 type="text"
                 id="name"
                 name="name"
-                placeholder="John Doe"
+                placeholder={t('contact.namePlaceholder')}
                 required
               />
             </div>
 
             <div className={styles.inputGroup}>
-              <label htmlFor="email">Email Address</label>
+              <label htmlFor="email">{t('contact.email')}</label>
 
               <input
                 type="email"
                 id="email"
                 name="email"
-                placeholder="john@example.com"
+                placeholder={t('contact.emailPlaceholder')}
                 required
               />
             </div>
 
             <div className={styles.inputGroup}>
-              <label htmlFor="message">Message</label>
+              <label htmlFor="message">{t('contact.message')}</label>
 
               <textarea
                 id="message"
                 name="message"
                 rows={5}
-                placeholder="How can we help you?"
+                placeholder={t('contact.messagePlaceholder')}
                 required
               />
             </div>
@@ -176,7 +177,7 @@ export default function Contact() {
               type="submit"
             >
               <Send size={18} />
-              Send Message
+              {t('contact.send')}
             </motion.button>
           </form>
         </motion.section>

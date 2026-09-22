@@ -3,19 +3,21 @@ import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, UserPlus } from "lucide-react";
 import styles from "./Navbar.module.css";
+import { useLanguage } from "../context/LanguageContext";
 
 const navLinks = [
-  { name: "Home", path: "/" },
-  { name: "About", path: "/about" },
-  { name: "Services", path: "/services" },
-  { name: "Members", path: "/members" },
-  { name: "Contact", path: "/contact" },
-  { name: "Terms & Conditions", path: "/terms" },
+  { key: "nav.home", path: "/" },
+  { key: "nav.about", path: "/about" },
+  { key: "nav.services", path: "/services" },
+  { key: "nav.members", path: "/members" },
+  { key: "nav.contact", path: "/contact" },
+  { key: "nav.terms", path: "/terms" },
 ];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
 
   const location = useLocation();
 
@@ -42,7 +44,7 @@ export default function Navbar() {
         <Link to="/" className={styles.logo}>
           <img
             src="/logo.png"
-            alt="Hamro Samuh Logo"
+            alt={t('brand.name')}
             className={styles.logoIconImage}
             width={150}
             height={150}
@@ -50,11 +52,11 @@ export default function Navbar() {
 
           <div className={styles.logoText}>
             <span className={styles.logoTitle}>
-              HAMRO SAMUH
+              {t('brand.name')}
             </span>
 
             <span className={styles.logoSubtitle}>
-              Together We Grow
+              {t('brand.tagline')}
             </span>
           </div>
         </Link>
@@ -63,18 +65,18 @@ export default function Navbar() {
         {/* Desktop Navigation */}
         <nav
           className={styles.desktopNav}
-          aria-label="Primary navigation"
+          aria-label={t('nav.primaryNavigation')}
         >
           {navLinks.map((link) => (
             <Link
-              key={link.name}
+              key={link.key}
               to={link.path}
               className={`${styles.navLink} ${location.pathname === link.path
                   ? styles.active
                   : ""
                 }`}
             >
-              {link.name}
+              {t(link.key)}
 
               {location.pathname === link.path && (
                 <motion.div
@@ -89,12 +91,21 @@ export default function Navbar() {
 
         {/* Desktop Login */}
         <div className={styles.actions}>
+          <select
+            className={styles.languageSelect}
+            value={language}
+            onChange={(event) => setLanguage(event.target.value === 'np' ? 'np' : 'en')}
+            aria-label={t('nav.language')}
+          >
+            <option value="en">{t('nav.english')}</option>
+            <option value="np">{t('nav.nepali')}</option>
+          </select>
           <a
             href="https://samuh.netlify.app/login"
             className={styles.solidBtn}
           >
             <UserPlus size={20} />
-            Login
+            {t('nav.login')}
           </a>
         </div>
 
@@ -103,7 +114,7 @@ export default function Navbar() {
         <button
           className={styles.mobileToggle}
           onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle Menu"
+          aria-label={t('nav.toggleMenu')}
           aria-expanded={isOpen}
         >
           {isOpen ? <X /> : <Menu />}
@@ -153,17 +164,17 @@ export default function Navbar() {
                 >
                   <img
                     src="/logo.png"
-                    alt="Hamro Samuh"
+                    alt={t('brand.name')}
                     className={styles.logoIconImage}
                   />
 
                   <div className={styles.logoText}>
                     <span className={styles.logoTitle}>
-                      HAMRO SAMUH
+                      {t('brand.name')}
                     </span>
 
                     <span className={styles.logoSubtitle}>
-                      Together We Grow
+                      {t('brand.tagline')}
                     </span>
                   </div>
                 </Link>
@@ -177,7 +188,7 @@ export default function Navbar() {
 
                 {navLinks.map((link) => (
                   <Link
-                    key={link.name}
+                    key={link.key}
                     to={link.path}
                     className={`${styles.mobileLink} ${location.pathname === link.path
                         ? styles.active
@@ -187,7 +198,7 @@ export default function Navbar() {
                       setIsOpen(false)
                     }
                   >
-                    {link.name}
+                  {t(link.key)}
                   </Link>
                 ))}
 
@@ -197,13 +208,22 @@ export default function Navbar() {
 
               {/* Mobile Login */}
               <div className={styles.mobileActions}>
+                <select
+                  className={styles.languageSelectMobile}
+                  value={language}
+                  onChange={(event) => setLanguage(event.target.value === 'np' ? 'np' : 'en')}
+                  aria-label={t('nav.language')}
+                >
+                  <option value="en">{t('nav.english')}</option>
+                  <option value="np">{t('nav.nepali')}</option>
+                </select>
                 <a
                   href="https://samuh.netlify.app/login"
                   className={styles.solidBtnMobile}
                   onClick={() => setIsOpen(false)}
                 >
                   <UserPlus size={20} />
-                  Login
+                  {t('nav.login')}
                 </a>
               </div>
 

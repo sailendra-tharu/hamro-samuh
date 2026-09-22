@@ -153,6 +153,32 @@
   background: var(--accent-hover);
 }
 
+.languageSelect,
+.languageSelectMobile {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  background: var(--bg-surface);
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.languageSelect {
+  padding: 0.4rem 0.75rem;
+}
+
+.languageSelect:hover,
+.languageSelect:focus,
+.languageSelectMobile:hover,
+.languageSelectMobile:focus {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+  background: var(--accent-lightest);
+  outline: none;
+}
+
 .mobileToggle {
   display: block;
   color: var(--text-primary);
@@ -209,12 +235,17 @@
 .mobileActions {
   padding: 1.5rem;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 1rem;
 }
 
 .outlineBtnMobile, .solidBtnMobile {
   width: 100%;
+}
+
+.languageSelectMobile {
+  width: 100%;
+  padding: 0.6rem 1.25rem;
 }
 
 .mobileHeader {

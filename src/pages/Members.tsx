@@ -22,6 +22,7 @@ import surajImage from '../assets/suraj.jpg';
 import rajImage from '../assets/raj.png';
 import yubrajImage from '../assets/yubraj.png';
 import zebinImage from '../assets/zebin.png';
+import { useLanguage } from '../context/LanguageContext';
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -60,12 +61,14 @@ const members = [
 ];
 
 export default function Members() {
+  const { t } = useLanguage();
+
   return (
     <article className={styles.members}>
       <section className={styles.membersSection} aria-labelledby="members-title">
         <div className="container">
           <div className={styles.header}>
-            <h1 id="members-title" className={styles.title}>Our Members</h1>
+            <h1 id="members-title" className={styles.title}>{t('members.heading')}</h1>
           </div>
           <motion.ul
             className={styles.grid}
@@ -92,8 +95,8 @@ export default function Members() {
                 </div>
                 <div className={styles.cardBody}>
                   <h3>{member.name}</h3>
-                  <span className={styles.role}>{member.role}</span>
-                  <p className={styles.joined}>Member since {member.joined}</p>
+                  <span className={styles.role}>{t('members.role')}</span>
+                  <p className={styles.joined}>{t('members.since')} {member.joined}</p>
                 </div>
               </motion.article>
               </li>

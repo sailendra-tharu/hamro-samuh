@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Users, GraduationCap, HeartPulse, Briefcase, Megaphone, ArrowRight, Heart } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import styles from './Services.module.css';
+import { useLanguage } from '../context/LanguageContext';
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -16,37 +17,39 @@ const staggerContainer = {
 const services = [
   {
     icon: <Users />,
-    title: "Community Development",
-    desc: "We work for the overall development of communities through participation and local empowerment.",
+    titleKey: 'services.community.title',
+    descKey: 'services.community.desc',
     image: "/service-community.png"
   },
   {
     icon: <GraduationCap />,
-    title: "Education Support",
-    desc: "We support quality education by providing resources, training, and opportunities for a better future.",
+    titleKey: 'services.education.title',
+    descKey: 'services.education.desc',
     image: "/service-education.png"
   },
   {
     icon: <HeartPulse />,
-    title: "Health & Wellness",
-    desc: "We promote good health and well-being through awareness programs and health initiatives.",
+    titleKey: 'services.health.title',
+    descKey: 'services.health.desc',
     image: "/service-health.png"
   },
   {
     icon: <Briefcase />,
-    title: "Livelihood Support",
-    desc: "We help people build skills and access opportunities for sustainable income and growth.",
+    titleKey: 'services.livelihood.title',
+    descKey: 'services.livelihood.desc',
     image: "/service-livelihood.png"
   },
   {
     icon: <Megaphone />,
-    title: "Advocacy & Awareness",
-    desc: "We raise awareness and advocate for positive change on important social issues.",
+    titleKey: 'services.advocacy.title',
+    descKey: 'services.advocacy.desc',
     image: "/service-advocacy.png"
   }
 ];
 
 export default function Services() {
+  const { t } = useLanguage();
+
   return (
     <article className={styles.services}>
 
@@ -74,13 +77,14 @@ export default function Services() {
             variants={staggerContainer}
           >
             <motion.h1 id="services-title" variants={fadeIn} className={styles.title}>
-              Working Together for a Better Tomorrow
+              {t('services.hero.title')}
             </motion.h1>
             <motion.p variants={fadeIn} className={styles.description}>
-              At Hamro Samuh, we believe that financial growth begins with trust and cooperation. By encouraging regular savings, providing responsible lending, and maintaining transparent financial management, we empower our members to achieve their goals while building a stronger, more resilient community together.            </motion.p>
+              {t('services.hero.description')}
+            </motion.p>
             <motion.div variants={fadeIn}>
               <a href="#core-services" className={styles.solidBtn}>
-                Explore Our Services <ArrowRight size={18} />
+                {t('services.hero.button')} <ArrowRight size={18} />
               </a>
             </motion.div>
           </motion.div>
@@ -97,9 +101,9 @@ export default function Services() {
           <div className={styles.missionIconBox}>
             <Users size={28} />
           </div>
-          <h3 id="mission-title">Our Mission</h3>
+          <h3 id="mission-title">{t('services.mission')}</h3>
           <div className={styles.missionDivider}></div>
-          <p>Empowering people and communities through collaboration, support, and sustainable solutions.</p>
+          <p>{t('services.mission.description')}</p>
         </motion.aside>
       </section>
 
@@ -108,9 +112,9 @@ export default function Services() {
         <div className="container">
           <div className={styles.sectionHeader}>
             <span className={styles.preTitleCenter}>
-              WHAT WE DO <span className={styles.preTitleLine}>—</span>
+              {t('services.heading.preTitle')} <span className={styles.preTitleLine}>—</span>
             </span>
-            <h2 id="core-services-title">Our Core Services</h2>
+            <h2 id="core-services-title">{t('services.heading')}</h2>
           </div>
 
           <motion.ul
@@ -125,11 +129,11 @@ export default function Services() {
                 <motion.article className={styles.coreCard} variants={fadeIn}>
                   <div className={styles.coreCardTop}>
                     <div className={styles.coreIconBox} aria-hidden="true">{srv.icon}</div>
-                    <h3>{srv.title}</h3>
-                    <p>{srv.desc}</p>
+                    <h3>{t(srv.titleKey)}</h3>
+                    <p>{t(srv.descKey)}</p>
                   </div>
                   <div className={styles.coreCardImage}>
-                    <img src={srv.image} alt={srv.title} />
+                    <img src={srv.image} alt={t(srv.titleKey)} />
                   </div>
                 </motion.article>
               </li>
@@ -139,27 +143,27 @@ export default function Services() {
       </section>
 
       {/* Bottom CTA */}
-      <section aria-label="Get involved with Hamro Samuh">
-        <div>
+      <section className={styles.bottomCta} aria-label="Get involved with Hamro Samuh">
+        <div className="container">
           <div className={styles.ctaBanner}>
             <div className={styles.ctaLeft}>
               <div className={styles.ctaItem}>
                 <div className={styles.ctaIconBox}><Users size={24} /></div>
                 <div>
-                  <h4>Together, we can create</h4>
-                  <p>stronger communities.</p>
+                  <h4>{t('services.cta.firstTitle')}</h4>
+                  <p>{t('services.cta.firstDescription')}</p>
                 </div>
               </div>
               <div className={styles.ctaItem}>
                 <div className={styles.ctaIconBox}><Heart size={24} /></div>
                 <div>
-                  <h4>Be part of the change.</h4>
-                  <p>Join us today!</p>
+                  <h4>{t('services.cta.secondTitle')}</h4>
+                  <p>{t('services.cta.secondDescription')}</p>
                 </div>
               </div>
             </div>
             <Link to="/contact" className={styles.ctaBtn}>
-              Get Involved <ArrowRight size={18} />
+              {t('services.cta.button')} <ArrowRight size={18} />
             </Link>
           </div>
         </div>

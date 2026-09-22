@@ -8,6 +8,7 @@ import Services from './pages/Services';
 import Members from './pages/Members';
 import Contact from './pages/Contact';
 import TermsAndConditions from './pages/TermsAndConditions';
+import { LanguageProvider } from './context/LanguageContext';
 import './App.css';
 
 const pageMetadata: Record<string, { title: string; description: string }> = {
@@ -76,24 +77,26 @@ function RouteMetadata() {
 
 function App() {
   return (
-    <Router>
-      <ScrollToTop />
-      <RouteMetadata />
-      <div className="app-container">
-        <Navbar />
-        <main className="main-content">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/members" element={<Members />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/terms" element={<TermsAndConditions />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <LanguageProvider>
+      <Router>
+        <ScrollToTop />
+        <RouteMetadata />
+        <div className="app-container">
+          <Navbar />
+          <main className="main-content">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/members" element={<Members />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/terms" element={<TermsAndConditions />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </Router>
+    </LanguageProvider>
   );
 }
 

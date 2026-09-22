@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Users, ShieldCheck, TrendingUp, Target, Handshake, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import styles from './About.module.css';
+import { useLanguage } from '../context/LanguageContext';
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -14,6 +15,8 @@ const staggerContainer = {
 };
 
 export default function About() {
+  const { t } = useLanguage();
+
   return (
     <article className={styles.about}>
 
@@ -41,18 +44,18 @@ export default function About() {
             variants={staggerContainer}
           >
             <motion.h1 id="about-title" variants={fadeIn} className={styles.title}>
-              <span className={styles.titleHighlight}>Hamro Samuh</span>
+              <span className={styles.titleHighlight}>{t('brand.name')}</span>
             </motion.h1>
             <motion.div variants={fadeIn} className={styles.titleBar}></motion.div>
             <motion.p variants={fadeIn} className={styles.description}>
-              Hamro Samuh is a community-based organization that brings people together to save regularly, support each other, and build a stronger financial future.
+              {t('about.hero.description1')}
             </motion.p>
             <motion.p variants={fadeIn} className={styles.description}>
-              We believe that when people come together with trust and transparency, small contributions can create a big impact.
+              {t('about.hero.description2')}
             </motion.p>
             <motion.div variants={fadeIn}>
               <Link to="/members" className={styles.solidBtn}>
-                <Users size={18} /> Our Members, Our Strength
+                <Users size={18} /> {t('about.hero.button')}
               </Link>
             </motion.div>
           </motion.div>
@@ -62,7 +65,7 @@ export default function About() {
       {/* Mission & Values */}
       <section className={styles.valuesSection} aria-labelledby="values-title">
         <div className="container">
-          <h2 id="values-title" className={styles.sectionTitle}>Our Mission & Values</h2>
+          <h2 id="values-title" className={styles.sectionTitle}>{t('about.values.heading')}</h2>
 
           <motion.ul
             className={styles.valuesGrid}
@@ -72,16 +75,16 @@ export default function About() {
             variants={staggerContainer}
           >
             {[
-              { icon: <Users />, title: "Togetherness", desc: "We believe in unity and collective growth. Together, we can achieve more." },
-              { icon: <ShieldCheck />, title: "Trust & Transparency", desc: "We operate with honesty and transparency to build strong and lasting relationships." },
-              { icon: <TrendingUp />, title: "Financial Empowerment", desc: "We encourage regular saving and smart financial habits for a better tomorrow." },
-              { icon: <Target />, title: "Our Goal", desc: "To create a self-reliant community where everyone can grow and prosper." }
+              { icon: <Users />, titleKey: 'about.value.togetherness', descKey: 'about.value.togetherness.desc' },
+              { icon: <ShieldCheck />, titleKey: 'about.value.trust', descKey: 'about.value.trust.desc' },
+              { icon: <TrendingUp />, titleKey: 'about.value.empowerment', descKey: 'about.value.empowerment.desc' },
+              { icon: <Target />, titleKey: 'about.value.goal', descKey: 'about.value.goal.desc' }
             ].map((item, i) => (
               <li key={i}>
                 <motion.article className={styles.valueCard} variants={fadeIn}>
                   <div className={styles.valueIconBox} aria-hidden="true">{item.icon}</div>
-                  <h3>{item.title}</h3>
-                  <p>{item.desc}</p>
+                  <h3>{t(item.titleKey)}</h3>
+                  <p>{t(item.descKey)}</p>
                 </motion.article>
               </li>
             ))}
@@ -100,36 +103,36 @@ export default function About() {
             transition={{ duration: 0.6 }}
           >
             <div className={styles.impactText}>
-              <h2 id="impact-title">Together, we create real impact</h2>
-              <p>Small savings today, stronger community tomorrow.</p>
+              <h2 id="impact-title">{t('about.impact.heading')}</h2>
+              <p>{t('about.impact.description')}</p>
             </div>
             <dl className={styles.impactStats}>
               <div className={styles.impactStatItem}>
                 <div className={styles.impactStatIcon}><Users size={22} /></div>
                 <div>
                   <dd>250+</dd>
-                  <dt>Active Members</dt>
+                  <dt>{t('about.impact.activeMembers')}</dt>
                 </div>
               </div>
               <div className={styles.impactStatItem}>
                 <div className={styles.impactStatIcon}><TrendingUp size={22} /></div>
                 <div>
                   <dd>Rs. 2.5M+</dd>
-                  <dt>Total Savings</dt>
+                  <dt>{t('about.impact.totalSavings')}</dt>
                 </div>
               </div>
               <div className={styles.impactStatItem}>
                 <div className={styles.impactStatIcon}><Globe size={22} /></div>
                 <div>
                   <dd>40+</dd>
-                  <dt>Groups</dt>
+                  <dt>{t('about.impact.groups')}</dt>
                 </div>
               </div>
               <div className={styles.impactStatItem}>
                 <div className={styles.impactStatIcon}><Handshake size={22} /></div>
                 <div>
                   <dd>100%</dd>
-                  <dt>Trust & Commitment</dt>
+                  <dt>{t('about.impact.trust')}</dt>
                 </div>
               </div>
             </dl>
@@ -149,7 +152,7 @@ export default function About() {
           >
             <span className={styles.quoteMarkLeft}>&ldquo;</span>
             <p className={styles.quoteText}>
-              <em>Alone we can do so little; together we can do so much.</em>
+              <em>{t('about.quote')}</em>
             </p>
             <span className={styles.quoteMarkRight}>&rdquo;</span>
             <cite className={styles.quoteAuthor}>– Helen Keller</cite>
