@@ -6,6 +6,6 @@
 
 .main-content {
   flex: 1;
-  padding-top: 82px;
+  padding-top: clamp(4.75rem, 7vw, 5.625rem);
   /* Space for fixed navbar */
 }

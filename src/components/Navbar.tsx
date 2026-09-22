@@ -75,6 +75,7 @@ export default function Navbar() {
                   ? styles.active
                   : ""
                 }`}
+              aria-current={location.pathname === link.path ? "page" : undefined}
             >
               {t(link.key)}
 
@@ -194,6 +195,7 @@ export default function Navbar() {
                         ? styles.active
                         : ""
                       }`}
+                    aria-current={location.pathname === link.path ? "page" : undefined}
                     onClick={() =>
                       setIsOpen(false)
                     }
