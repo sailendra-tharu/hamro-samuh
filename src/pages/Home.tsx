@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import styles from './Home.module.css';
 import alokImg from '../assets/alok.jpg';
 import amitImg from '../assets/amit.jpg';
-import jhalakImg from '../assets/jhalak.jpeg';
+import jhalakImg from '../assets/jhalak.jpg';
 import sailendraImg from '../assets/sailendra.jpg';
 import { useLanguage } from '../context/LanguageContext';
 

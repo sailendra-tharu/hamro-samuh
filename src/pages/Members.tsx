@@ -3,26 +3,28 @@ import styles from './Members.module.css';
 
 import alokImg from '../assets/alok.jpg';
 import amitImg from '../assets/amit.jpg';
-import arbindImg from '../assets/arbind.png';
-import aryanImg from '../assets/aryan.jpeg';
+import arbindImg from '../assets/arbind.jpg';
+import aryanImg from '../assets/aryan.jpg';
 import gaurishankarImg from '../assets/gaurishankar.jpg';
-import kishorImg from '../assets/kishor.png';
+import kishorImg from '../assets/kishor.jpg';
 import ramjitImg from '../assets/ramjit.jpg';
 import sailendraImg from '../assets/sailendra.jpg';
-import rameshImg from '../assets/ramesh.jpeg';
-import abinashImg from '../assets/abinash.jpeg';
-import harindarImg from '../assets/harindar.jpeg';
-import jhalakImg from '../assets/jhalak.jpeg';
-import samirImg from '../assets/samir.jpeg';
-import sanjayImg from '../assets/sanjay.png';
-import shreekantiImg from '../assets/shreekanti.jpeg';
+import rameshImg from '../assets/ramesh.jpg';
+import abinashImg from '../assets/abinash.jpg';
+import harindarImg from '../assets/harindar.jpg';
+import jhalakImg from '../assets/jhalak.jpg';
+import samirImg from '../assets/samir.jpg';
+import sanjayImg from '../assets/sanjay.jpg';
+import shreekantiImg from '../assets/shreekanti.jpg';
 import bineshImage from '../assets/binesh.jpg';
 import binayImage from '../assets/binay.jpg';
 import surajImage from '../assets/suraj.jpg';
-import rajImage from '../assets/raj.png';
-import yubrajImage from '../assets/yubraj.png';
-import zebinImage from '../assets/zebin.png';
-import akashImage from '../assets/akash.png';
+import rajImage from '../assets/raj.jpg';
+import yubrajImage from '../assets/yubraj.jpg';
+import zebinImage from '../assets/zebin.jpg';
+import akashImage from '../assets/akash.jpg';
+import nikeshImage from '../assets/nikesh.jpg';
+import parbatiImage from '../assets/parbati.jpg';
 import { useLanguage } from '../context/LanguageContext';
 
 const fadeIn = {
@@ -58,7 +60,8 @@ const members = [
   { name: "Yubraj Gurung", nameNp: "युवराज गुरुङ", role: "Member", image: yubrajImage, joined: "2083" },
   { name: "Zebin Gurung", nameNp: "जेबिन गुरुङ", role: "Member", image: zebinImage, joined: "2083" },
   { name: "Akash Chaudhary", nameNp: "आकाश चौधरी", role: "Member", image: akashImage, joined: "2083" },
-  
+  { name: "Nikesh Khawash Tharu", nameNp: "निकेश खवास थारु", role: "Member", image: nikeshImage, joined: "2083" },
+  { name: "Parbati Das Tharu", nameNp: "पार्वती चौधरी", role: "Member", image: parbatiImage, joined: "2083" },
 
 ];
 
