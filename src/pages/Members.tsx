@@ -61,7 +61,7 @@ const members = [
   { name: "Zebin Gurung", nameNp: "जेबिन गुरुङ", role: "Member", image: zebinImage, joined: "2083" },
   { name: "Akash Chaudhary", nameNp: "आकाश चौधरी", role: "Member", image: akashImage, joined: "2083" },
   { name: "Nikesh Khawash Tharu", nameNp: "निकेश खवास थारु", role: "Member", image: nikeshImage, joined: "2083" },
-  { name: "Parbati Das Tharu", nameNp: "पार्वती चौधरी", role: "Member", image: parbatiImage, joined: "2083" },
+  { name: "Parbati Kumari", nameNp: "पार्वती कुमारी", role: "Member", image: parbatiImage, joined: "2083" },
 
 ];
 
