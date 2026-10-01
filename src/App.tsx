@@ -1,15 +1,16 @@
-import { useEffect } from 'react';
+import { Suspense, lazy, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Home from './pages/Home';
-import About from './pages/About';
-import Services from './pages/Services';
-import Members from './pages/Members';
-import Contact from './pages/Contact';
-import TermsAndConditions from './pages/TermsAndConditions';
 import { LanguageProvider } from './context/LanguageContext';
 import './App.css';
+
+const Home = lazy(() => import('./pages/Home'));
+const About = lazy(() => import('./pages/About'));
+const Services = lazy(() => import('./pages/Services'));
+const Members = lazy(() => import('./pages/Members'));
+const Contact = lazy(() => import('./pages/Contact'));
+const TermsAndConditions = lazy(() => import('./pages/TermsAndConditions'));
 
 const pageMetadata: Record<string, { title: string; description: string }> = {
   '/': {
@@ -84,14 +85,16 @@ function App() {
         <div className="app-container">
           <Navbar />
           <main className="main-content">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/services" element={<Services />} />
-              <Route path="/members" element={<Members />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/terms" element={<TermsAndConditions />} />
-            </Routes>
+            <Suspense fallback={<div style={{ padding: '2rem', textAlign: 'center' }}>Loading...</div>}>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/services" element={<Services />} />
+                <Route path="/members" element={<Members />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/terms" element={<TermsAndConditions />} />
+              </Routes>
+            </Suspense>
           </main>
           <Footer />
         </div>
